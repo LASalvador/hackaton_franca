@@ -9,8 +9,8 @@
 			"valor": 700.000,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap1_1.jpg",
+				 "../pictures/ap1_2.jpg"
 			]
 		},
 		{
@@ -22,8 +22,8 @@
 			"valor": 550.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap2_1.jpg",
+				 "../pictures/ap2_2.jpg"
 			]
 		},
 		{
@@ -35,21 +35,21 @@
 			"valor": 650.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap3_1.jpg",
+				 "../pictures/ap3_2.jpg"
 			]
 		},
 		{
 		    "id": 4,
-			"nome": "Otimo Apartamento - Locação",
+			"nome": "Otimo Apartamento",
 			"endereco": "Rua Luiz Carlos Fraga e Silva, Conjunto Residencial Galo Branco - São José dos Campos/SP",
 			"tipoImovel" : "Apartamento",
 			"tipoNegocio" : "Residencial",
-			"valor": 800.00,
-			"status":"Aluguel",
+			"valor": 80000.00,
+			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap4_1.jpg",
+				 "../pictures/ap4_2.jpg"
 			]
 		},
 		{
@@ -61,8 +61,8 @@
 			"valor": 755.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap5_1.jpg",
+				 "../pictures/ap5_2.jpg"
 			]
 		},
 		{
@@ -74,11 +74,22 @@
 			"valor": 450 ,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap11_1.jpg",
+				 "../pictures/ap11_2.jpg"
 			]
 		},
-
+		{
+		    "id": 12,
+			"nome": "Sala comerical no centro",
+			"endereco": "Rua Carlos de Campos, Parque Itamarati - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 120.000 ,
+			"status":"Venda",
+			"fotos":[
+				 "../pictures/ap12_1.jpg",
+				 "../pictures/ap12_2.jpg"
+			]
+		},
 	]
-
 }
