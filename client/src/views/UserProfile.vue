@@ -13,16 +13,18 @@
           <v-form>
             <v-container py-0>
               <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id">
-                <div v-if="mensagem.tipo === 'texto'">
-                  <v-chip color="red" text-color="white">
-                    <v-avatar color="red darken-4">F</v-avatar>
+                <div v-if="mensagem.visivel">
+                  <div v-if="mensagem.tipo === 'texto'">
+                    <v-chip color="red" text-color="white">
+                      <v-avatar color="red darken-4">F</v-avatar>
+                        {{mensagem.texto}}
+                    </v-chip>
+                  </div>
+                  <div v-if="mensagem.tipo === 'botao'">
+                    <v-btn small color="red">
                       {{mensagem.texto}}
-                  </v-chip>
-                </div>
-                <div v-if="mensagem.tipo === 'botao'">
-                  <v-btn small color="red">
-                    {{mensagem.texto}}
-                  </v-btn>
+                    </v-btn>
+                  </div>
                 </div>
               </v-layout>
             </v-container>
