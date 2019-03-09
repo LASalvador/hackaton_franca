@@ -13,16 +13,20 @@
               <div v-for="mensagem in arrayConversaChat" :key="mensagem.id">
                 <v-flex xs12 v-if="mensagem.visivel">
                   <div v-if="mensagem.tipo === 'texto'">
-                    <v-chip color="red" text-color="white">
-                      <v-avatar color="red darken-4">F</v-avatar>
+                    <v-chip :color="mensagem.remetente === 'francis' ? 'red' : 'grey darken-1'" text-color="white">
+                      <v-avatar :color="mensagem.remetente === 'francis' ? 'red darken-4' : 'grey darken-4'">
+                        {{mensagem.remetente === 'francis' ? 'F' : 'Eu' }}
+                      </v-avatar>
                       {{mensagem.texto}}
                     </v-chip>
                   </div>
-                  <v-layout wrap v-if="mensagem.tipo === 'botao'">
-                    <v-btn small color="red" >
-                      {{mensagem.texto}}
-                    </v-btn>
-                  </v-layout>
+                  <div v-if="mensagem.tipo === 'botao'">
+                    <div v-for="botao in mensagem.opcoes" :key="botao.id">
+                      <v-btn small color="red accent-2" @click="responder(mensagem, botao)">
+                        {{botao.texto}}
+                      </v-btn>
+                    </div>
+                  </div>
                 </v-flex>
               </div>
         </material-card>
