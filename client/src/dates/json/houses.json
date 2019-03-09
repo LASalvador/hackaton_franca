@@ -9,62 +9,87 @@
 			"valor": 700.000,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap1_1.jpg",
+				 "../pictures/ap1_2.jpg"
 			]
 		},
 		{
 		    "id": 2,
 			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": "",
-			"status":"",
+			"endereco": "Rua das Marulas, Residencial Frei Galvão - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 550.00,
+			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap2_1.jpg",
+				 "../pictures/ap2_2.jpg"
 			]
 		},
 		{
 		    "id": 3,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": "",
-			"status":"",
+			"nome": "Apartamento com dormitórios",
+			"endereco": "Av Juscelino Kubitschek, Monte Castelo - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 650.00,
+			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap3_1.jpg",
+				 "../pictures/ap3_2.jpg"
 			]
 		},
 		{
 		    "id": 4,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": "",
-			"status":"",
+			"nome": "Otimo Apartamento",
+			"endereco": "Rua Luiz Carlos Fraga e Silva, Conjunto Residencial Galo Branco - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 80000.00,
+			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap4_1.jpg",
+				 "../pictures/ap4_2.jpg"
 			]
 		},
 		{
-		    "id": 3,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": "",
-			"status":"",
+		    "id": 5,
+			"nome": "Apartamento Novo - Vila Maria",
+			"endereco": "Rua São Pedro, Vila Maria - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 755.00,
+			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				 "../pictures/ap5_1.jpg",
+				 "../pictures/ap5_2.jpg"
 			]
-		}
+		},
+		{
+		    "id": 11 ,
+			"nome": "Sala/Conjunto",
+			"endereco": "Avenida Orlando Hardt, Centro - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 450 ,
+			"status":"Aluguel",
+			"fotos":[
+				 "../pictures/ap11_1.jpg",
+				 "../pictures/ap11_2.jpg"
+			]
+		},
+		{
+		    "id": 12,
+			"nome": "Sala comerical no centro",
+			"endereco": "Rua Carlos de Campos, Parque Itamarati - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 120.000 ,
+			"status":"Venda",
+			"fotos":[
+				 "../pictures/ap12_1.jpg",
+				 "../pictures/ap12_2.jpg"
+			]
+		},
 	]
-
 }
