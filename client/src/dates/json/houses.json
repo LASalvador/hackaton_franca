@@ -16,11 +16,11 @@
 		{
 		    "id": 2,
 			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": ,
-			"status":"",
+			"endereco": "Rua das Marulas, Residencial Frei Galvão - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 550.00,
+			"status":"Aluguel",
 			"fotos":[
 				 "",
 				 ""
@@ -28,12 +28,12 @@
 		},
 		{
 		    "id": 3,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": ,
-			"status":"",
+			"nome": "Apartamento com dormitórios",
+			"endereco": "Av Juscelino Kubitschek, Monte Castelo - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 650.00,
+			"status":"Aluguel",
 			"fotos":[
 				 "",
 				 ""
@@ -41,30 +41,44 @@
 		},
 		{
 		    "id": 4,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": ,
-			"status":"",
+			"nome": "Otimo Apartamento - Locação",
+			"endereco": "Rua Luiz Carlos Fraga e Silva, Conjunto Residencial Galo Branco - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 800.00,
+			"status":"Aluguel",
 			"fotos":[
 				 "",
 				 ""
 			]
 		},
 		{
-		    "id": 3,
-			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
-			"endereco": "",
-			"tipoImovel" : "",
-			"tipoNegocio" : "",
-			"valor": ,
-			"status":"",
+		    "id": 5,
+			"nome": "Apartamento Novo - Vila Maria",
+			"endereco": "Rua São Pedro, Vila Maria - São José dos Campos/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 755.00,
+			"status":"Aluguel",
 			"fotos":[
 				 "",
 				 ""
 			]
 		},
+		{
+		    "id": 11 ,
+			"nome": "Sala/Conjunto",
+			"endereco": "Avenida Orlando Hardt, Centro - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 450 ,
+			"status":"Aluguel",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+
 	]
 
 }
