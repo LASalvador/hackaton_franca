@@ -1,6 +1,6 @@
 <template>
-  <v-container fill-height fluid grid-list-xl>
-    <v-layout justify-center wrap>
+  <v-container fill-height fluid>
+    <v-layout wrap>
       <v-flex xs12 md8>
         <material-card>
           <v-avatar slot="offset" class="mx-auto d-block" size="70">
@@ -10,25 +10,21 @@
             <h4 class="card-title font-weight-light">Francis</h4>
             <h6 class="category text-gray font-weight-thin mb-3">Assistente virtual</h6>
           </v-card-text>
-          <v-form>
-            <v-container py-0>
-              <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id">
-                <div v-if="mensagem.visivel">
+              <div v-for="mensagem in arrayConversaChat" :key="mensagem.id">
+                <v-flex xs12 v-if="mensagem.visivel">
                   <div v-if="mensagem.tipo === 'texto'">
                     <v-chip color="red" text-color="white">
                       <v-avatar color="red darken-4">F</v-avatar>
-                        {{mensagem.texto}}
+                      {{mensagem.texto}}
                     </v-chip>
                   </div>
-                  <div v-if="mensagem.tipo === 'botao'">
-                    <v-btn small color="red">
+                  <v-layout wrap v-if="mensagem.tipo === 'botao'">
+                    <v-btn small color="red" >
                       {{mensagem.texto}}
                     </v-btn>
-                  </div>
-                </div>
-              </v-layout>
-            </v-container>
-          </v-form>
+                  </v-layout>
+                </v-flex>
+              </div>
         </material-card>
       </v-flex>
     </v-layout>

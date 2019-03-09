@@ -51,6 +51,13 @@ export default {
           visivel: true,
           tipo: 'botao',
           remetente: 'francis',
+          texto: 'Avaliar imóvel'
+        },
+        {
+          id: 7,
+          visivel: true,
+          tipo: 'botao',
+          remetente: 'francis',
           texto: 'Reportar problema'
         },
 
