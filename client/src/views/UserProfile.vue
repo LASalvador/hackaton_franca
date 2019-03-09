@@ -12,13 +12,24 @@
         md8
       >
         <material-card
-          color="green"
-          title="Edit Profile"
-          text="Complete your profile"
+          color="red"
+          title="Francis"
+          text="Vamos conversar"
         >
           <v-form>
             <v-container py-0>
               <v-layout wrap>
+                <v-chip
+                  slot="activator"
+                  color="red"
+                  text-color="white"
+                >
+                  <v-avatar
+                    color="red darken-4"
+                  >F
+                  </v-avatar>
+                  Olá como vai?
+                </v-chip>
                 <v-flex
                   xs12
                   md4
@@ -144,6 +155,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   //
 }
