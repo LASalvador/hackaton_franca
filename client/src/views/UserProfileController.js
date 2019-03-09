@@ -40,8 +40,20 @@ export default {
           texto: 'Comprar'
         },
         {
-          
-        }
+          id: 5,
+          visivel: true,
+          tipo: 'botao',
+          remetente: 'francis',
+          texto: 'Anunciar'
+        },
+        {
+          id: 6,
+          visivel: true,
+          tipo: 'botao',
+          remetente: 'francis',
+          texto: 'Reportar problema'
+        },
+
       ]
     }
   },
