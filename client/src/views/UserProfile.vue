@@ -22,7 +22,7 @@
                   </div>
                   <div v-if="mensagem.tipo === 'botao'">
                     <div v-for="botao in mensagem.opcoes" :key="botao.id">
-                      <v-btn small color="red accent-2" @click="responder('botao', mensagem, botao)">
+                      <v-btn small color="red accent-2" @click="responder('botao', botao, mensagem)">
                         {{botao.texto}}
                       </v-btn>
                     </div>
