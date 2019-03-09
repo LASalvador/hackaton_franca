@@ -30,6 +30,17 @@
                 </v-flex>
               </div>
         </material-card>
+        <material-card v-if="objetoResposta.visivel">
+          <div v-if="objetoResposta.modelo === 'opcao'">
+            <div v-if="objetoResposta.tipo === 'botao'">
+              <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
+                <v-btn small color="red accent-2" @click="responder('botao', botao, mensagem)">
+                  {{opcao.texto}}
+                </v-btn>
+              </div>
+            </div>
+          </div>
+        </material-card>
       </v-flex>
     </v-layout>
   </v-container>

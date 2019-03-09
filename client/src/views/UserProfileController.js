@@ -28,37 +28,34 @@ export default {
           remetente: 'francis',
           texto: 'O que você precisa fazer hoje?'
         },
-        {
-          id: 3,
-          visivel: true,
-          modelo: 'opcao',
-          tipo: 'botao',
-          remetente: 'francis',
-          opcoes: [
-            {
-              id: 0,
-              texto: 'Alugar'
-            },
-            {
-              id: 1,
-              texto: 'Comprar'
-            },
-            {
-              id: 2,
-              texto: 'Anunciar'
-            },
-            {
-              id: 3,
-              texto: 'Avaliar imóvel'
-            },
-            {
-              id: 4,
-              texto: 'Reportar um problema'
-            }
-          ]
-        },
-
-      ]
+      ],
+      objetoResposta: {
+        visivel: true,
+        modelo: 'opcao',
+        tipo: 'botao',
+        opcoes: [
+          {
+            id: 0,
+            texto: 'Alugar'
+          },
+          {
+            id: 1,
+            texto: 'Comprar'
+          },
+          {
+            id: 2,
+            texto: 'Anunciar'
+          },
+          {
+            id: 3,
+            texto: 'Avaliar imóvel'
+          },
+          {
+            id: 4,
+            texto: 'Reportar um problema'
+          }
+        ]
+      }
     }
   },
   methods: {
