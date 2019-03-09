@@ -62,24 +62,38 @@ export default {
     }
   },
   methods: {
-    responder (opcoes, resposta) {
-      this.arrayConversaChat.forEach(item => {
-        if (item.id === opcoes.id) {
-          item.visivel = false
-          
-          item.opcoes.forEach(opcao => {
-            if (opcao.id === resposta.id)
-              this.arrayConversaChat.push({
-                id: this.arrayConversaChat.length,
-                visivel: true,
-                modelo: 'resposta',
-                tipo: 'texto',
-                remetente: 'usuario',
-                texto: resposta.texto
-              })
-          })
-        }
-      });
+    responder(tipoResposta, resposta, opcoes) {
+      if (tipoResposta === 'botao') {
+        this.arrayConversaChat.forEach(item => {
+          if (item.id === opcoes.id) {
+            item.visivel = false
+            
+            item.opcoes.forEach(opcao => {
+              if (opcao.id === resposta.id)
+                this.arrayConversaChat.push({
+                  id: this.arrayConversaChat.length,
+                  visivel: true,
+                  modelo: 'resposta',
+                  tipo: 'texto',
+                  remetente: 'usuario',
+                  texto: resposta.texto
+                })
+            })
+          }
+        });
+        return true
+      }
+
+      if (tipoResposta === 'texto') {
+        this.arrayConversaChat.push({
+          id: this.arrayConversaChat.length,
+          visivel: true,
+          modelo: 'resposta',
+          tipo: 'texto',
+          remetente: 'usuario',
+          texto: resposta
+        })
+      }
     }
   }
 }
