@@ -1,112 +1,105 @@
 export default {
   created() {
-    this.iniciarConversa()
+    this.avancarConversa()
   },
   data() {
     return {
-      arrayConversaChat: [
+      arrayHistoricoConversa: [],
+      arrayScriptPrincipal: [
         {
           id: 0,
-          visivel: true,
-          modelo: 'pergunta',
-          tipo: 'texto',
-          remetente: 'francis',
+          foiExibido: false,
+          modelo: 'informacao',
           texto: 'Olá, tudo bem? Eu sou o Francis!'
         },
         {
           id: 1,
-          visivel: true,
-          modelo: 'pergunta',
-          tipo: 'texto',
-          remetente: 'francis',
+          foiExibido: false,
+          modelo: 'informacao',
           texto: 'Vou te auxiliar hoje!'
         },
         {
           id: 2,
-          visivel: true,
+          foiExibido: false,
           modelo: 'pergunta',
-          tipo: 'texto',
-          remetente: 'francis',
-          texto: 'O que você precisa fazer hoje?'
-        },
-      ],
-      objetoResposta: {
-        visivel: true,
-        modelo: 'opcao',
-        tipo: 'botao',
-        opcoes: [
-          {
-            id: 0,
-            texto: 'Alugar'
-          },
-          {
-            id: 1,
-            texto: 'Comprar'
-          },
-          {
-            id: 2,
-            texto: 'Anunciar'
-          },
-          {
-            id: 3,
-            texto: 'Avaliar imóvel'
-          },
-          {
-            id: 4,
-            texto: 'Reportar um problema'
+          texto: 'O que você precisa fazer hoje?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Alugar'
+              },
+              {
+                id: 1,
+                texto: 'Comprar'
+              },
+              {
+                id: 2,
+                texto: 'Anunciar'
+              },
+              {
+                id: 3,
+                texto: 'Avaliar imóvel'
+              },
+              {
+                id: 4,
+                texto: 'Reportar um problema'
+              }
+            ]
           }
-        ]
-      },
-      arrayRespostas: [
-        {
-          id: 0,
-          visivel: true,
-          modelo: 'opcao',
-          tipo: 'botao',
-          opcoes: [
-            {
-              id: 0,
-              texto: 'Alugar'
-            },
-            {
-              id: 1,
-              texto: 'Comprar'
-            },
-            {
-              id: 2,
-              texto: 'Anunciar'
-            },
-            {
-              id: 3,
-              texto: 'Avaliar imóvel'
-            },
-            {
-              id: 4,
-              texto: 'Reportar um problema'
-            }
-          ]
         }, 
-        {
-          id: 1,
-          visivel: true,
-          modelo: 'texto',
-          tipo: 'numerico',
-          label: '',
-        } 
-      ]
+      ],
+      arrayScriptCompraAluguel: [],
+      objetoResposta: {
+        visivel: false
+      },
     }
   },
   methods: {
-    iniciarConversa() {
-      this.objetoResposta = this.arrayRespostas[0]
+    avancarConversa() {
+      let objetoProximaInteracao = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
+      this.arrayHistoricoConversa.push(objetoProximaInteracao)
+      
+      if (objetoProximaInteracao.modelo === 'pergunta' && objetoProximaInteracao.resposta) {
+        this.objetoResposta = objetoProximaInteracao.resposta
+        this.arrayScriptPrincipal.forEach(item => {
+          if (item.id === objetoProximaInteracao.id) {
+            item.foiExibido = true
+          }
+        })
+      } else {
+        this.arrayScriptPrincipal.forEach(item => {
+          if (item.id === objetoProximaInteracao.id) {
+            item.foiExibido = true
+            this.avancarConversa()
+          }
+        })
+      }
+      return true
     },
-    responder(tipoResposta, resposta) {
-      if (tipoResposta === 'botao') {            
+    responder(resposta) {
+      if (resposta.tipo === 'botao') {  
+        this.arrayHistoricoConversa.push({
+          id: this.arrayConversaChat.length,
+          foiExibido: true,
+          modelo: 'resposta',
+          tipo: 'texto',
+          remetente: 'usuario',
+          texto: resposta.texto
+        })
+        
+
+
+
+
         this.objetoResposta.opcoes.forEach(opcao => {
           if (opcao.id === resposta.id) {
             this.arrayConversaChat.push({
               id: this.arrayConversaChat.length,
-              visivel: true,
+              foiExibido: true,
               modelo: 'resposta',
               tipo: 'texto',
               remetente: 'usuario',
@@ -117,10 +110,10 @@ export default {
         return true
       }
 
-      if (tipoResposta === 'texto') {
+      if (resposta.tipo === 'texto' || resposta.tipo === 'numerico') {
         this.arrayConversaChat.push({
           id: this.arrayConversaChat.length,
-          visivel: true,
+          foiExibido: true,
           modelo: 'resposta',
           tipo: 'texto',
           remetente: 'usuario',
