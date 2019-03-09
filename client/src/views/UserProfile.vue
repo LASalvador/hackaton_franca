@@ -30,16 +30,41 @@
                 </v-flex>
               </div>
         </material-card>
+
         <material-card v-if="objetoResposta.visivel">
           <div v-if="objetoResposta.modelo === 'opcao'">
             <div v-if="objetoResposta.tipo === 'botao'">
               <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-                <v-btn small color="red accent-2" @click="responder('botao', botao, mensagem)">
+                <v-btn small color="red accent-2" @click="responder('botao', opcao)">
+                  {{opcao.texto}}
+                </v-btn>
+              </div>
+            </div>
+
+            <div v-if="objetoResposta.tipo === 'card'">
+              <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
+                <v-btn small color="red accent-2" @click="responder('botao', opcao)">
                   {{opcao.texto}}
                 </v-btn>
               </div>
             </div>
           </div>
+
+          <div v-if="objetoResposta.modelo === 'texto'">
+            <div v-if="objetoResposta.tipo === 'numerico'">
+              <v-text-field v-model="objetoResposta.resposta" label="Digite uma resposta"></v-text-field>
+              <v-btn @click="responder('texto', objetoResposta.resposta)" color="success">text</v-btn>
+            </div>
+
+            <div v-if="objetoResposta.tipo === 'texto'">
+              <div>
+                <v-btn small color="red accent-2" @click="responder('botao', opcao)">
+                  {{opcao.texto}}
+                </v-btn>
+              </div>
+            </div>
+          </div>
+
         </material-card>
       </v-flex>
     </v-layout>

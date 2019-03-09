@@ -1,5 +1,6 @@
 export default {
   created() {
+    this.iniciarConversa()
   },
   data() {
     return {
@@ -55,29 +56,64 @@ export default {
             texto: 'Reportar um problema'
           }
         ]
-      }
+      },
+      arrayRespostas: [
+        {
+          id: 0,
+          visivel: true,
+          modelo: 'opcao',
+          tipo: 'botao',
+          opcoes: [
+            {
+              id: 0,
+              texto: 'Alugar'
+            },
+            {
+              id: 1,
+              texto: 'Comprar'
+            },
+            {
+              id: 2,
+              texto: 'Anunciar'
+            },
+            {
+              id: 3,
+              texto: 'Avaliar imóvel'
+            },
+            {
+              id: 4,
+              texto: 'Reportar um problema'
+            }
+          ]
+        }, 
+        {
+          id: 1,
+          visivel: true,
+          modelo: 'texto',
+          tipo: 'numerico',
+          label: '',
+        } 
+      ]
     }
   },
   methods: {
-    responder(tipoResposta, resposta, opcoes) {
-      if (tipoResposta === 'botao') {
-        this.arrayConversaChat.forEach(item => {
-          if (item.id === opcoes.id) {
-            item.visivel = false
-            
-            item.opcoes.forEach(opcao => {
-              if (opcao.id === resposta.id)
-                this.arrayConversaChat.push({
-                  id: this.arrayConversaChat.length,
-                  visivel: true,
-                  modelo: 'resposta',
-                  tipo: 'texto',
-                  remetente: 'usuario',
-                  texto: resposta.texto
-                })
+    iniciarConversa() {
+      this.objetoResposta = this.arrayRespostas[0]
+    },
+    responder(tipoResposta, resposta) {
+      if (tipoResposta === 'botao') {            
+        this.objetoResposta.opcoes.forEach(opcao => {
+          if (opcao.id === resposta.id) {
+            this.arrayConversaChat.push({
+              id: this.arrayConversaChat.length,
+              visivel: true,
+              modelo: 'resposta',
+              tipo: 'texto',
+              remetente: 'usuario',
+              texto: resposta.texto
             })
           }
-        });
+        })
         return true
       }
 
@@ -88,7 +124,7 @@ export default {
           modelo: 'resposta',
           tipo: 'texto',
           remetente: 'usuario',
-          texto: resposta
+          texto: this.objetoResposta.resposta
         })
       }
     }
