@@ -3,7 +3,7 @@
     <v-layout justify-center wrap>
       <v-flex xs12 md8>
         <material-card>
-          <v-avatar slot="offset" class="mx-auto d-block" size="100">
+          <v-avatar slot="offset" class="mx-auto d-block" size="70">
             <img src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg">
           </v-avatar>
           <v-card-text class="text-xs-center">
@@ -13,10 +13,17 @@
           <v-form>
             <v-container py-0>
               <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id">
-                <v-chip slot="activator" color="red" text-color="white">
-                  <v-avatar color="red darken-4">F</v-avatar>
-                  {{ mensagem.texto }}
-                </v-chip>
+                <div v-if="mensagem.tipo === 'texto'">
+                  <v-chip color="red" text-color="white">
+                    <v-avatar color="red darken-4">F</v-avatar>
+                      {{mensagem.texto}}
+                  </v-chip>
+                </div>
+                <div v-if="mensagem.tipo === 'botao'">
+                  <v-btn small color="red">
+                    {{mensagem.texto}}
+                  </v-btn>
+                </div>
               </v-layout>
             </v-container>
           </v-form>
