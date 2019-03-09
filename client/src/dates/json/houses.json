@@ -1,0 +1,70 @@
+{
+	"houses": [
+		{
+		    "id": 1,
+			"nome": "Casa em Condomínio com 2 Dormitórios",
+			"endereco": "Rodovia Nilo Máximo, Vila Zezé - Jacareí/SP",
+			"tipoImovel" : "Apartamento",
+			"tipoNegocio" : "Residencial",
+			"valor": 700.000,
+			"status":"Venda",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+		{
+		    "id": 2,
+			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
+			"endereco": "",
+			"tipoImovel" : "",
+			"tipoNegocio" : "",
+			"valor": ,
+			"status":"",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+		{
+		    "id": 3,
+			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
+			"endereco": "",
+			"tipoImovel" : "",
+			"tipoNegocio" : "",
+			"valor": ,
+			"status":"",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+		{
+		    "id": 4,
+			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
+			"endereco": "",
+			"tipoImovel" : "",
+			"tipoNegocio" : "",
+			"valor": ,
+			"status":"",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+		{
+		    "id": 3,
+			"nome": "Lindo Apartamento Frei Galvão - SJC - Locação",
+			"endereco": "",
+			"tipoImovel" : "",
+			"tipoNegocio" : "",
+			"valor": ,
+			"status":"",
+			"fotos":[
+				 "",
+				 ""
+			]
+		},
+	]
+
+}
