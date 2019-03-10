@@ -437,6 +437,20 @@ export default {
           }
         }, 
         {
+          id: 10,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Que tal adcionar algumas fotos?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'imagem',
+            label: '',
+            texto: ''
+          }
+        }, 
+        {
           id: 11,
           foiExibido: false,
           pausaEscrita: 2,
