@@ -70,7 +70,14 @@ export default {
           tipo: 'pergunta',
           remetente: 'Francis',
           identificador: "1",
-          texto: 'O que nota voce dá a pintura do imovel?'
+          texto: 'O que nota voce dá a estetica do imovel?'
+        },
+        {
+          id: 6,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: "1",
+          texto: 'O que nota voce dá a estrutura do imovel?'
         }
       ],
       respostasConversa: [],
