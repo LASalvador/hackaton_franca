@@ -51,8 +51,11 @@
                   <v-img :src="imovel.fotos[0]" aspect-ratio="2.30"></v-img>
                   <v-card-title>
                     <div class="title">{{imovel.nome}}</div>
-                    <p class="grey--text">{{imovel.endereco}}</p>
-                    <p class="grey--text">{{imovel.tipoImovel}} - {{imovel.status}} - Valor R$ {{imovel.valor.toFixed(2)}}</p>
+                    <div>
+                      <v-chip color="green" text-color="white" label>{{imovel.tipoImovel}} - {{imovel.status}}</v-chip>
+                      <v-chip color="green" text-color="white" label>R$ {{imovel.valor.toFixed(2)}}</v-chip>
+                    </div>
+                    <p class="black--text">{{imovel.endereco}}</p>
                   </v-card-title>
                 </v-card>
               </v-flex>

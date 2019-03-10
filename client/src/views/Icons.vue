@@ -6,23 +6,18 @@
           <v-layout wrap >
             <v-flex align-selfstart>
               <div>
-                <span>
-                    Preencha este formulário!
-                </span>
-                  
-                <span xs12 color="red" text-color="white">
-                  Para te ajudarmos!
-                </span>
+                <span>Preencha este formulário!</span>
+                <span xs12 color="red" text-color="white">Para te ajudarmos!</span>
               </div>
                     
               <div>
-                <v-text-field  id="nome" label="Nome completo"></v-text-field>
+                <v-text-field id="nome" label="Nome completo"></v-text-field>
               </div>
               <div>
-                <v-text-field   label="E-mail"></v-text-field>
+                <v-text-field label="E-mail"></v-text-field>
               </div>
               <div>
-                <v-text-field   label="Contato"></v-text-field>
+                <v-text-field label="Contato"></v-text-field>
               </div>
               <div>
                 <span> 
@@ -30,27 +25,27 @@
                 </span>
               </div>
               <div>
-                <v-text-field   label="Título"></v-text-field>
+                <v-text-field label="Título"></v-text-field>
               </div>
                 
               <div>
-                <v-text-field   label="Endereço"></v-text-field>
+                <v-text-field label="Endereço"></v-text-field>
               </div>
 
               <div>
-                <v-text-field   label="Complemento"></v-text-field>
+                <v-text-field label="Complemento"></v-text-field>
               </div>
               <div>
-                <v-textarea   label="Descrição"></v-textarea>
+                <v-textarea label="Descrição"></v-textarea>
               </div>
               
               <v-select
                   :items="tipo_imovel"
-                  label="Tipo de Imóvel"
+                label="Tipo de Imóvel"
                 ></v-select>
               <v-select
                   :items="tipo_negocio"
-                  label="Tipo de Negócio"
+                label="Tipo de Negócio"
                 ></v-select>
                   <h4 class="card-title font-weight-light">O que pretende fazer?</h4>
                   <v-radio-group v-model="radios" :mandatory="false">

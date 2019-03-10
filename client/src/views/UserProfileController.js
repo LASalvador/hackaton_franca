@@ -71,7 +71,7 @@ export default {
           }
         }, 
       ],
-      arrayScriptCompraAluguel: [
+      arrayScriptCompraAluguelSimples: [
         {
           id: 0,
           foiExibido: false,
@@ -210,6 +210,21 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
+          texto: 'Beleza! Qual o valor máximo do imóvel?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'number',
+            label: 'Consigo pagar até...',
+            texto: ''
+          }
+        },
+        {
+          id: 9,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
           texto: 'Você tem carro?',
           resposta: {
             visivel: true,
@@ -222,13 +237,142 @@ export default {
               },
               {
                 id: 1,
-                texto: 'Tenho 2 xodós'
+                texto: 'Tenho 2 xodós',
               },
               {
                 id: 2,
-                texto: 'Mais de 3, sim, isso mesmo'
+                texto: 'Mais de 3, sim, isso mesmo',
               },
             ]
+          }
+        },
+        {
+          id: 10,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Já encontrei alguns imóveis...',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Vamos ver quais são',
+                funcao: 'finalizarSimples'
+              },
+              {
+                id: 1,
+                texto: 'Quero filtrar mais',
+                funcao: 'iniciarExtendido'
+              },
+            ]
+          }
+        },
+      ],
+      arrayScriptAnuncio: [
+        {
+          id: 0,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Acho que ainda não nos conhecemos!',
+        },
+        {
+          id: 1,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Qual o seu nome completo?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'text',
+            label: 'Meu nome é...',
+            texto: ''
+          }
+        },
+        {
+          id: 2,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Muito prazer!',
+        },
+        {
+          id: 3,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'E você tem email?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'text',
+            label: 'Meu email é',
+            texto: ''
+          }
+        },
+        {
+          id: 4,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'E se precisarmos te ligar...',
+        },
+        {
+          id: 5,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Qual o seu telefone mesmo?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'phone',
+            label: 'Meu telefone é...',
+            texto: ''
+          }
+        },
+        {
+          id: 6,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Vamos falar do seu imóvel!',
+        },
+        {
+          id: 7,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Como você apresentaria seu imóvel?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'text',
+            label: 'Lindo apartamento em área nobre',
+            texto: ''
+          }
+        },
+        {
+          id: 8,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Qual o endereço do imóvel?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'text',
+            label: 'Av. Super Devs já ganhou',
+            texto: ''
           }
         },
         {
@@ -236,16 +380,115 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Beleza! Qual o valor máximo do imóvel?',
+          texto: 'Descreva seu imóvel',
           resposta: {
             visivel: true,
             modelo: 'resposta',
             tipo: 'texto',
-            tipoDado: 'number',
-            label: 'Consigo pagar até...',
+            tipoDado: 'text',
+            label: 'Meu imóvel tem lareira para os dias frios...',
             texto: ''
           }
         },
+        {
+          id: 10,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Qual o tipo do seu imóvel?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Apartamento',
+              },
+              {
+                id: 1,
+                texto: 'Casa',
+              },
+              {
+                id: 2,
+                texto: 'Casa em Condomínio',
+              },
+              {
+                id: 3,
+                texto: 'Chácara',
+              },
+              {
+                id: 4,
+                texto: 'Sítio',
+              },
+              {
+                id: 5,
+                texto: 'Terreno',
+              },
+              {
+                id: 6,
+                texto: 'Terreno em Condomínio',
+              },
+              {
+                id: 7,
+                texto: 'Área',
+              }
+            ]
+          }
+        }, 
+        {
+          id: 11,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Qual o tipo do seu negócio?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Residencial',
+              },
+              {
+                id: 1,
+                texto: 'Comercial',
+              },
+              {
+                id: 2,
+                texto: 'Empreendimento',
+              },
+            ]
+          }
+        }, 
+        {
+          id: 12,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'Por fim, o que deseja?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Alugar',
+                funcao: 'finalizarAnuncio'
+              },
+              {
+                id: 1,
+                texto: 'Vender',
+                funcao: 'finalizarAnuncio'
+              },
+            ]
+          }
+        }, 
+        
+      ],
+      arrayScriptCompraAluguelExtendido: [
         {
           id: 10,
           foiExibido: false,
@@ -378,22 +621,27 @@ export default {
               {
                 id: 0,
                 texto: 'Precisa ter alarme',
+                funcao: 'finalizarSimples'
               },
               {
                 id: 1,
-                texto: 'Condomínio fechado'
+                texto: 'Condomínio fechado',
+                funcao: 'finalizarSimples'
               },
               {
                 id: 2,
-                texto: 'Interfone'
+                texto: 'Interfone',
+                funcao: 'finalizarSimples'
               },
               {
                 id: 3,
-                texto: 'Portaria 24 horas'
+                texto: 'Portaria 24 horas',
+                funcao: 'finalizarSimples'
               },
               {
                 id: 4,
-                texto: 'Vigilância 24 horas'
+                texto: 'Vigilância 24 horas',
+                funcao: 'finalizarSimples'
               },
             ]
           },
@@ -414,21 +662,21 @@ export default {
       let interacaoParaHistorico = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
       
       if (!objetoProximaInteracao) {
-        this.objetoResposta = null
-        this.arrayHistoricoConversa = this.arrayHistoricoConversa.concat([
-          {
-            id: this.arrayHistoricoConversa.length,
-            foiExibido: true,
-            modelo: 'informacao',
-            texto: 'Desculpe, ocorreu um erro.'
-          },
-          {
-            id: this.arrayHistoricoConversa.length + 1,
-            foiExibido: true,
-            modelo: 'informacao',
-            texto: 'Podemos conversar mais tarde?'
-          }
-        ])
+        // this.objetoResposta = null
+        // this.arrayHistoricoConversa = this.arrayHistoricoConversa.concat([
+        //   {
+        //     id: this.arrayHistoricoConversa.length,
+        //     foiExibido: true,
+        //     modelo: 'informacao',
+        //     texto: 'Desculpe, ocorreu um erro.'
+        //   },
+        //   {
+        //     id: this.arrayHistoricoConversa.length + 1,
+        //     foiExibido: true,
+        //     modelo: 'informacao',
+        //     texto: 'Podemos conversar mais tarde?'
+        //   }
+        // ])
         
         return false
       }
@@ -467,17 +715,26 @@ export default {
 
       if (resposta.funcao) {
         if (resposta.funcao === 'alugar' || resposta.funcao === 'comprar') {
-          /*this.arrayScriptCompraAluguel.forEach(item => {
+          this.arrayScriptCompraAluguelSimples.forEach(item => {
             item.id = this.arrayScriptPrincipal.length
             this.arrayScriptPrincipal.push(item)
-          })*/
+          })
+        }
 
+        if (resposta.funcao === 'iniciarExtendido') {
+          this.arrayScriptCompraAluguelExtendido.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })
+        }
+
+        if (resposta.funcao === 'finalizarSimples') {
           this.arrayScriptPrincipal.push({
             id: this.arrayScriptPrincipal.length,
             foiExibido: false,
             pausaEscrita: 2,
             modelo: 'pergunta',
-            texto: 'Vamos ver alguns imóveis?',
+            texto: 'Encontrei esses imóveis!',
             resposta: {
               visivel: true,
               modelo: 'resposta',
@@ -486,9 +743,29 @@ export default {
             }
           })
         }
-        if (resposta.funcao === 'anunciar') {
-         
+
+        if (resposta.funcao === 'finalizarAnuncio') {
           this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'informacao',
+            texto: 'Muito obrigado por anunciar conosco!',
+            resposta: {
+              visivel: true,
+              modelo: 'resposta',
+              tipo: 'resultados',
+              opcoes: []
+            }
+          })
+        }
+
+        if (resposta.funcao === 'anunciar') {
+          this.arrayScriptAnuncio.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })
+          /*this.arrayScriptPrincipal.push({
             id: this.arrayScriptPrincipal.length,
             foiExibido: false,
             pausaEscrita: 2,
@@ -499,8 +776,9 @@ export default {
               modelo: 'anunciar',
               tipo: 'component'
             }
-          })
+          })*/
         }
+
         if (resposta.funcao === 'avaliar') {
 
           this.arrayScriptPrincipal.push({
@@ -517,6 +795,7 @@ export default {
           })
 
         }
+
         if (resposta.funcao === 'reportar') {
 
           this.arrayScriptPrincipal.push({
