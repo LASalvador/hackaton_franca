@@ -47,7 +47,7 @@
           <div v-if="objetoResposta.tipo === 'resultados'">
             <v-layout v-for="imovel in objetoResposta.opcoes" :key="imovel.id">
               <v-flex xs12>
-                <v-card color="#DDDDDD" text-color="white" :title="imovel.nome">
+                <v-card color="#DDDDDD" text-color="white" :title="imovel.nome" @click="objetoImovelSelecionado = imovel; sheet = true">
                   <v-img :src="imovel.fotos[0]" aspect-ratio="2.30"></v-img>
                   <v-card-title>
                     <div class="title">{{imovel.nome}}</div>
@@ -69,6 +69,29 @@
         
       </v-flex>
     </v-layout>
+
+    <v-bottom-sheet v-model="sheet">
+      <v-container v-if="sheet">
+        <v-layout>
+          <v-flex xs12>
+            <v-card>
+              <v-img :src="objetoImovelSelecionado.fotos[1]"></v-img>
+              <v-rating v-model="rating" color="#00a5d3" readonly></v-rating>
+              <v-divider></v-divider>
+                <v-card-title>
+                <div>
+                  <span class="headline">Imovel</span>
+                  <v-spacer></v-spacer>
+                  <span class="headline">Status</span>
+                
+                <div class="grey--text font-weight-light">valor</div>
+                </div>
+              </v-card-title>      
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-bottom-sheet>
   </v-container>
 </template>
 
