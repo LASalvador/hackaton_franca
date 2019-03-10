@@ -6,8 +6,13 @@
           <v-flex>
             <div grid-list-xl> 
             <v-select
+                :items="arrayNomes"
+                label="Selecione o imovel"
+              ></v-select>
+            <v-select
                 :items="items"
                 label="Selecione a categoria da Reclamação"
+                color="#0087a5"
               ></v-select>
             </div>
             <v-textarea v-model="teste" label="Descreva com detalhes sua reclamação" xs12></v-textarea>
@@ -34,9 +39,16 @@
 </template>
 
 <script>
+import imoveis from '@/dates/json/houses.json'
 export default {
+  created() {
+    this.arrayImoveis = imoveis.houses,
+    this.nomesLista()
+  },
   data () {
     return {
+      arrayNomes: [],
+      arrayImoveis: [],
       items: [
         'Problema estrutural',
         'Problema eletrico',
@@ -60,8 +72,13 @@ export default {
         this[loc] = true
       }
       this.snackbar = true
-    }
+    },
+    nomesLista() {
+      this.arrayImoveis.forEach(a => {
+        this.arrayNomes.push(a.nome)
+      });
   }
+}
 }
 </script>
 <style scoped>

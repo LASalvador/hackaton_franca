@@ -125,19 +125,7 @@ export default {
 }
 </script>
 <style scoped>
-  .enviar {
+ .enviar {
    border-radius: 20px;
  }
- </style>
-    
-
-
-
-
-                  
-                 
-                 
-                                
-                  
-                        
-
+</style>
