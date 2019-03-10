@@ -2,31 +2,27 @@
   <v-container fill-height fluid grid-list-xl xs12>
     <v-layout wrap xs12>
       <v-flex xs12 md8>
-        <material-card xs12>
-          <v-card-text class="text-right" xs12>
-            <v-container py-0 xs12>
-              <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
-              <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
-                <v-flex>
-                  <div>
-                   <span>
-                        {{mensagem.texto}}
-                   </span>
-                  </div>
-                  <div  v-if="mensagem.tipo == 'pergunta'">
-                   <v-rating></v-rating>
-                  </div>
-                </v-flex>
-                <br>
-              </v-layout>
+        <v-container py-0 xs12>
+          <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
+          <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
+            <v-flex>
               <div>
-                <v-btn @click="snack('bottom')" small color="red">
-                  Enviar Avaliacao
-                </v-btn>
+                <span>
+                    {{mensagem.texto}}
+                </span>
               </div>
-            </v-container>
-          </v-card-text>
-        </material-card>
+              <div  v-if="mensagem.tipo == 'pergunta'">
+                <v-rating></v-rating>
+              </div>
+            </v-flex>
+            <br>
+          </v-layout>
+          <div>
+            <v-btn @click="snack('bottom')" small color="red">
+              Enviar Avaliacao
+            </v-btn>
+          </div>
+        </v-container>
          <v-snackbar
           :color="red"
           :bottom="bottom"

@@ -1,9 +1,11 @@
 import imoveis from '@/dates/json/houses.json'
 import reports from './Maps'
+import avaliar from './TableList1'
 
 export default {
   components: {
-    'reports': reports
+    'reports': reports,
+    'avaliar': avaliar
   },
   created() {
     this.arrayImoveis = imoveis.houses
@@ -480,26 +482,35 @@ export default {
           })
         }
         if (resposta.funcao === 'anunciar') {
-          /*this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
-          })*/
-
-          this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
+         
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Sua avaliação é de extrema importancia para nós',
+            resposta: {
+              visivel: true,
+              modelo: 'anunciar',
+              tipo: 'component'
+            }
           })
         }
         if (resposta.funcao === 'avaliar') {
-          /*this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
-          })*/
 
-          this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Sua avaliação é importante para nós',
+            resposta: {
+              visivel: true,
+              modelo: 'avaliar',
+              tipo: 'component'
+            }
           })
+
         }
         if (resposta.funcao === 'reportar') {
 
