@@ -1,5 +1,4 @@
 import imoveis from '@/dates/json/houses.json'
-import image from '@/dates/pictures/ap1_1.jpg'
 import reports from './Maps'
 
 export default {
@@ -8,12 +7,10 @@ export default {
   },
   created() {
     this.arrayImoveis = imoveis.houses
-    this.image = image
     this.avancarConversa()
   },
   data() {
     return {
-      image: '',
       arrayHistoricoConversa: [],
       arrayScriptPrincipal: [
         {
