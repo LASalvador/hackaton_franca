@@ -9,8 +9,8 @@
 			"valor": 700.000,
 			"status":"Venda",
 			"fotos":[
-				 "../pictures/ap1_1.jpg",
-				 "../pictures/ap1_2.jpg"
+				 "@/dates/pictures/ap1_1.jpg",
+				 "@/dates/pictures/ap1_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,
@@ -29,8 +29,8 @@
 			"valor": 550.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap2_1.jpg",
-				 "../pictures/ap2_2.jpg"
+				 "@/dates/pictures/ap2_1.jpg",
+				 "@/dates/pictures/ap2_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 4 ,
@@ -49,8 +49,8 @@
 			"valor": 650.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap3_1.jpg",
-				 "../pictures/ap3_2.jpg"
+				 "@/dates/pictures/ap3_1.jpg",
+				 "@/dates/pictures/ap3_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 3 ,
@@ -69,8 +69,8 @@
 			"valor": 80000.00,
 			"status":"Venda",
 			"fotos":[
-				 "../pictures/ap4_1.jpg",
-				 "../pictures/ap4_2.jpg"
+				 "@/dates/pictures/ap4_1.jpg",
+				 "@/dates/pictures/ap4_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,
@@ -89,8 +89,8 @@
 			"valor": 755.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap5_1.jpg",
-				 "../pictures/ap5_2.jpg"
+				 "@/dates/pictures/ap5_1.jpg",
+				 "@/dates/pictures/ap5_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,
@@ -228,8 +228,8 @@
 			"valor": 450 ,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap11_1.jpg",
-				 "../pictures/ap11_2.jpg"
+				 "@/dates/pictures/ap11_1.jpg",
+				 "@/dates/pictures/ap11_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 5,
@@ -248,8 +248,8 @@
 			"valor": 120.000 ,
 			"status":"Venda",
 			"fotos":[
-				 "../pictures/ap12_1.jpg",
-				 "../pictures/ap12_2.jpg"
+				 "@/dates/pictures/ap12_1.jpg",
+				 "@/dates/pictures/ap12_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,

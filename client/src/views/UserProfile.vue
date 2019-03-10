@@ -29,7 +29,7 @@
         
         <material-card v-if="objetoResposta">
           <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
-            <v-flex xs8>
+            <v-flex xs10>
               <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
                 <v-btn block small color="#00a5d3" @click="responder(opcao)">
                   {{opcao.texto}}
@@ -38,18 +38,16 @@
             </v-flex>
           </v-layout>
 
-          <div v-if="objetoResposta.tipo === 'card'">
-            <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-              <v-btn block color="blue accent-2" @click="responder(opcao)">
-                {{opcao.texto}}
-              </v-btn>
-            </div>
-          </div>
-
           <div v-if="objetoResposta.tipo === 'texto'">
             <v-flex justify-space-between>
               <v-text-field color="#00a5d3" :type="objetoResposta.tipoDado" v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
             </v-flex>
+          </div>
+
+          <div v-if="objetoResposta.tipo === 'resultados'">
+            <!-- <material-card color="primary" title="Vue Material Dashboard PRO" text="Are you looking for more components? Please check our Premium Version of Vue Material Dashboard."> -->
+            <material-card color="primary" v-for="imovel in objetoResposta.opcoes" :key="imovel.id">
+            </material-card>
           </div>
 
         </material-card>
