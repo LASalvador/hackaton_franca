@@ -401,7 +401,10 @@ export default {
       ],
       arrayImoveis: [],
       objetoResposta: null,
-      exibComponent: false
+      exibComponent: false,
+      objetoImovelSelecionado: {},
+      sheet: false,
+      rating: 4,
     }
   },
   methods: {
