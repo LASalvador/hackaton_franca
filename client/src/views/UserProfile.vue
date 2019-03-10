@@ -13,14 +13,14 @@
           </v-card-text>
           <div v-for="mensagem in arrayHistoricoConversa" :key="mensagem.id">
             <div class="text-xs-left" v-if="mensagem.modelo !== 'resposta'">
-              <v-chip color="green" text-color="white">
-                <v-avatar color="green darken-4">F</v-avatar>
+              <v-chip color="#00a5d3" text-color="white">
+                <v-avatar color="#0087a5">F</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
             <div class="text-xs-right" v-else>
-              <v-chip color="blue darken-1" text-color="white">
-                <v-avatar color="blue darken-4">Eu</v-avatar>
+              <v-chip color="#ae62a4" text-color="white">
+                <v-avatar color="#56539f">Eu</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
@@ -30,7 +30,7 @@
         <material-card v-if="objetoResposta">
           <div v-if="objetoResposta.tipo === 'botao'">
             <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-              <v-btn small color="blue accent-2" @click="responder(opcao)">
+              <v-btn small color="#00a5d3" @click="responder(opcao)">
                 {{opcao.texto}}
               </v-btn>
             </div>
@@ -44,14 +44,9 @@
             </div>
           </div>
 
-          <div v-if="objetoResposta.tipo === 'numerico'">
-            <v-text-field v-model="objetoResposta.resposta" label="Digite uma resposta"></v-text-field>
-            <v-btn @click="responder(objetoResposta.resposta)" color="success">text</v-btn>
-          </div>
-
           <div v-if="objetoResposta.tipo === 'texto'">
             <v-flex justify-space-between>
-              <v-text-field v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
+              <v-text-field color="#00a5d3" :type="objetoResposta.tipoDado" v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
             </v-flex>
           </div>
 

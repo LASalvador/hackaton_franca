@@ -10,7 +10,7 @@ export default {
         {
           id: 0,
           foiExibido: false,
-          pausaEscrita: 2000,
+          pausaEscrita: 2,
           modelo: 'informacao',
           texto: 'Oi, tudo bem? Eu sou o Francis!'
         },
@@ -31,11 +31,28 @@ export default {
             visivel: true,
             modelo: 'resposta',
             tipo: 'texto',
-            label: 'Meu nome é...'
+            tipoDado: 'text',
+            label: 'Meu nome é...',
+            texto: ''
+          }
+        },
+        {
+          id: 3,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'E a sua idade?',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'texto',
+            tipoDado: 'number',
+            label: 'Minha idade é...',
+            texto: ''
           }
         }, 
         {
-          id: 3,
+          id: 4,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
@@ -465,8 +482,9 @@ export default {
   },
   methods: {
     avancarConversa() {
-
+      
       let objetoProximaInteracao = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
+      let interacaoParaHistorico = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
       
       if (!objetoProximaInteracao) {
         this.objetoResposta = null
@@ -487,28 +505,30 @@ export default {
         
         return false
       }
-
-      objetoProximaInteracao.id = this.arrayHistoricoConversa.length
+      
+      interacaoParaHistorico.id = this.arrayHistoricoConversa.length
       this.arrayHistoricoConversa.push(objetoProximaInteracao)
       
       let avancaNovamente = objetoProximaInteracao.modelo === 'pergunta' && objetoProximaInteracao.resposta ? false : true
       
-      this.arrayScriptPrincipal.forEach(item => {
+      for (let index = 0; index < this.arrayScriptPrincipal.length; index++) {
+        const item = this.arrayScriptPrincipal[index];
+        
         if (item.id === objetoProximaInteracao.id) {
-          item.foiExibido = true
+          this.arrayScriptPrincipal[index].foiExibido = true
           
           if (avancaNovamente) {
             this.avancarConversa()
           } else this.objetoResposta = objetoProximaInteracao.resposta
+          break
         }
-      })
+      }
 
       this.$vuetify.goTo(9999, { duration: 800, offset: 0, easing: 'easeInOutCubic' })
       return true
 
     },
     responder(resposta) {
-      
       let respostaUsuario = resposta.texto || resposta
 
       this.arrayHistoricoConversa.push({
