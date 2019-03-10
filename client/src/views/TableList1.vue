@@ -31,6 +31,7 @@
           :top="top"
           :left="left"
           :right="right"
+          color="#16AC70"
           v-model="snackbar"
         >
           <div>Obrigado por completar a avaliação. Sua opinião é muito válida</div>
