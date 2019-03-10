@@ -692,12 +692,13 @@ export default {
         //   }
         // ])
         
-        return false
+        // return false
       }
       
       interacaoParaHistorico.id = this.arrayHistoricoConversa.length
       this.arrayHistoricoConversa.push(objetoProximaInteracao)
       
+      //let avancaNovamente = objetoProximaInteracao.modelo === 'pergunta' && objetoProximaInteracao.resposta ? false : true
       let avancaNovamente = objetoProximaInteracao.modelo === 'pergunta' && objetoProximaInteracao.resposta ? false : true
       
       for (let index = 0; index < this.arrayScriptPrincipal.length; index++) {
@@ -718,7 +719,9 @@ export default {
 
     },
     responder(resposta) {
-      let respostaUsuario = resposta.texto || resposta
+      let respostaUsuario = resposta.texto || resposta 
+
+      if (!respostaUsuario || respostaUsuario.texto === "") return false
 
       this.arrayHistoricoConversa.push({
         id: this.arrayHistoricoConversa.length,
@@ -763,10 +766,10 @@ export default {
             id: this.arrayScriptPrincipal.length,
             foiExibido: false,
             pausaEscrita: 2,
-            modelo: 'informacao',
+            modelo: 'pergunta',
             texto: 'Muito obrigado por anunciar conosco!',
             resposta: {
-              visivel: true,
+              visivel: false,
               modelo: 'resposta',
               tipo: 'resultados',
               opcoes: []
