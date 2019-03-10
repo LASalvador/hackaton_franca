@@ -1,5 +1,4 @@
 import imoveis from '@/dates/json/houses.json'
-import image from '@/dates/pictures/ap1_1.jpg'
 import reports from './Maps'
 
 export default {
@@ -8,12 +7,10 @@ export default {
   },
   created() {
     this.arrayImoveis = imoveis.houses
-    this.image = image
     this.avancarConversa()
   },
   data() {
     return {
-      image: '',
       arrayHistoricoConversa: [],
       arrayScriptPrincipal: [
         {
@@ -460,7 +457,7 @@ export default {
         modelo: 'resposta',
         texto: respostaUsuario
       })
-      console.log('>>>>>>>>>>>>>>>>>>>>', resposta.funcao)
+
       if (resposta.funcao) {
         if (resposta.funcao === 'alugar' || resposta.funcao === 'comprar') {
           /*this.arrayScriptCompraAluguel.forEach(item => {
@@ -505,10 +502,20 @@ export default {
           })
         }
         if (resposta.funcao === 'reportar') {
-          this.objetoResposta =  {
-            tipo: 'component',
-            modelo: 'reportar'
-          }
+
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Vamos resolver seu problema!',
+            resposta: {
+              visivel: true,
+              modelo: 'reportar',
+              tipo: 'component'
+            }
+          })
+
         }
       }
 
