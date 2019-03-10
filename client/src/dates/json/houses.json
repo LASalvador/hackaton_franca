@@ -16,7 +16,8 @@
 				"arredores": 2 ,
 				"infra": 3,
 				"disponibilidade": 5,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -35,7 +36,8 @@
 				"arredores": 4 ,
 				"infra": 2,
 				"disponibilidade": 1,
-				"documetacao": 2
+				"documetacao": 2,
+				"media": 2
 			}
 		},
 		{
@@ -54,7 +56,8 @@
 				"arredores": 3 ,
 				"infra": 2,
 				"disponibilidade": 2,
-				"documetacao": 5
+				"documetacao": 5,
+				"media": 3
 			}
 		},
 		{
@@ -73,7 +76,8 @@
 				"arredores": 2 ,
 				"infra": 3,
 				"disponibilidade": 5,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 2.75
 			}
 		},
 		{
@@ -92,7 +96,8 @@
 				"arredores": 2 ,
 				"infra": 1,
 				"disponibilidade": 3,
-				"documetacao": 3
+				"documetacao": 3,
+				"media": 2
 			}
 		},
 		{
@@ -111,7 +116,8 @@
 				"arredores": 3,
 				"infra": 3,
 				"disponibilidade": 1,
-				"documetacao": 3
+				"documetacao": 3,
+				"media": 3
 			}
 		},
 		{
@@ -130,7 +136,8 @@
 				"arredores": 4,
 				"infra": 2,
 				"disponibilidade": 5,
-				"documetacao": 4
+				"documetacao": 4,
+				"media": 4
 			}
 		},{
 		    "id": 8,
@@ -148,7 +155,8 @@
 				"arredores": 2 ,
 				"infra": 3,
 				"disponibilidade": 5,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -167,7 +175,8 @@
 				"arredores": 1 ,
 				"infra": 3,
 				"disponibilidade": 4,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -186,7 +195,8 @@
 				"arredores": 2 ,
 				"infra": 3,
 				"disponibilidade": 5,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -205,7 +215,8 @@
 				"arredores": 4 ,
 				"infra": 2,
 				"disponibilidade": 3,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -224,7 +235,8 @@
 				"arredores": 5,
 				"infra": 3,
 				"disponibilidade": 1,
-				"documetacao": 2
+				"documetacao": 2,
+				"media": 3
 			}
 		},
 		{
@@ -243,7 +255,8 @@
 				"arredores": 2 ,
 				"infra": 5,
 				"disponibilidade": 2,
-				"documetacao": 1
+				"documetacao": 1,
+				"media": 3
 			}
 		},
 		{
@@ -262,7 +275,8 @@
 				"arredores": 1 ,
 				"infra": 5,
 				"disponibilidade": 2,
-				"documetacao": 3
+				"documetacao": 3,
+				"media": 3
 			}
 		},
 		{
@@ -281,7 +295,8 @@
 				"arredores": 3 ,
 				"infra": 4,
 				"disponibilidade": 2,
-				"documetacao": 4
+				"documetacao": 4,
+				"media": 4
 			}
 		}
 	]
