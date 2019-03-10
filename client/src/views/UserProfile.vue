@@ -31,7 +31,7 @@
           <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
             <v-flex xs10>
               <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-                <v-btn block small color="#00a5d3" @click="responder(opcao)">
+                <v-btn block small color="#3D7ED7" @click="responder(opcao)">
                   {{opcao.texto}}
                 </v-btn>
               </div>
@@ -40,7 +40,13 @@
 
           <div v-if="objetoResposta.tipo === 'texto'">
             <v-flex justify-space-between>
-              <v-text-field color="#00a5d3" :type="objetoResposta.tipoDado" v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
+              <v-text-field color="#3D7ED7" :type="objetoResposta.tipoDado" v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
+            </v-flex>
+          </div>
+          
+          <div v-if="objetoResposta.tipo === 'imagem'">
+            <v-flex justify-space-between>
+              <v-text-field type="file" accept="image/*" @input="responder('Foto')"></v-text-field>
             </v-flex>
           </div>
 
@@ -88,19 +94,19 @@
                 <v-flex xs12>
                 <v-rating v-model="objetoImovelSelecionado.avaliacoes.media" readonly background-color="#ae62a4" color="indigo" size="20"></v-rating>
                 </v-flex>
-                <v-chip color="#00a5d3" text-color="white" label>
+                <v-chip color="#3D7ED7" text-color="white" label>
                   Código {{objetoImovelSelecionado.id}}
                 </v-chip>
-                <v-chip color="#00a5d3" text-color="white" label>
+                <v-chip color="#3D7ED7" text-color="white" label>
                   {{ ((Math.random(5) * 10) + 1).toFixed(0) }} Dormitórios
                 </v-chip>
-                <v-chip color="#00a5d3" text-color="white" label>
+                <v-chip color="#3D7ED7" text-color="white" label>
                   {{ ((Math.random(1) * 1.5) + 1).toFixed(0) }} Vagas
                 </v-chip>
-                <v-chip color="#00a5d3" text-color="white" label>
+                <v-chip color="#3D7ED7" text-color="white" label>
                   {{ ((Math.random(700) * 100) + 30).toFixed(0) }} m²
                 </v-chip>
-                <v-chip color="#00a5d3" text-color="white" label>
+                <v-chip color="#3D7ED7" text-color="white" label>
                   {{ ((Math.random(700) * 100) + 30).toFixed(0) }} Visualizações
                 </v-chip>
                 <p text-color="black">{{objetoImovelSelecionado.endereco}}</p>
