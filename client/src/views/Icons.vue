@@ -60,7 +60,7 @@
                         <v-radio label="Vender" value="Vender"></v-radio>
                         <v-radio label="Comprar" value="Comprar"></v-radio>
                       </v-radio-group>
-                      <v-btn class="enviar" color="red" >
+                      <v-btn class="enviar" color="red" @click="snack('bottom')" >
                        Enviar
                       </v-btn>
                 </v-flex>
@@ -69,6 +69,20 @@
             </v-container>
           </v-card-text>
         </material-card>
+        <v-snackbar
+          :color="red"
+          :bottom="bottom"
+          :top="top"
+          :left="left"
+          :right="right"
+          v-model="snackbar"
+        >
+          <div>Obrigado por mandar seus dados. Em breve entaremos em contato!</div>
+          <v-icon
+            size="16"
+            @click="snackbar = false"
+          > </v-icon>
+        </v-snackbar>
       </v-flex>
     </v-layout>
   </v-container>
@@ -76,10 +90,7 @@
                 
 <script>
 export default {
-  data () {
-    return {
-     
-      respostasConversa: [],
+  data: () => ({
       resposta: null, 
          tipo_imovel: [
         'Apartamento',
@@ -90,18 +101,30 @@ export default {
         'Terreno',
         'Terreno em Condomínio',
         'Área',
+        
       ],
        tipo_negocio: [
         'Residencial',
         'Comercial',
         'Empreendimento',
         ],
-       }
-  },
-  methods: {
-    teste () {
-      this.respostasConversa.push(resposta)
-      console.log('teseee', this.respostasConversa)
+    top: true,
+    bottom: false,
+    left: false,
+    right: false,
+    snackbar: false
+  }),
+  methods : {
+    snack (...args) {
+      this.top = false
+      this.bottom = false
+      this.left = false
+      this.right = false
+
+      for (const loc of args) {
+        this[loc] = true
+      }
+      this.snackbar = true
     }
   }
 }
@@ -110,6 +133,7 @@ export default {
   .enviar {
    border-radius: 20px;
  }
+ </style>
     
 
 
