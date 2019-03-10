@@ -9,9 +9,16 @@
 			"valor": 700.000,
 			"status":"Venda",
 			"fotos":[
-				 "../pictures/ap1_1.jpg",
-				 "../pictures/ap1_2.jpg"
-			]
+				 "./pictures/ap1_1.jpg",
+				 "./pictures/ap1_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 3,
+				"disponibilidade": 5,
+				"documetacao": 1,
+				"media": 3
+			}
 		},
 		{
 		    "id": 2,
@@ -22,9 +29,16 @@
 			"valor": 550.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap2_1.jpg",
-				 "../pictures/ap2_2.jpg"
-			]
+				 "./pictures/ap2_1.jpg",
+				 "./pictures/ap2_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 4 ,
+				"infra": 2,
+				"disponibilidade": 1,
+				"documetacao": 2,
+				"media": 2
+			}
 		},
 		{
 		    "id": 3,
@@ -35,9 +49,16 @@
 			"valor": 650.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap3_1.jpg",
-				 "../pictures/ap3_2.jpg"
-			]
+				 "./pictures/ap3_1.jpg",
+				 "./pictures/ap3_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 3 ,
+				"infra": 2,
+				"disponibilidade": 2,
+				"documetacao": 5,
+				"media": 3
+			}
 		},
 		{
 		    "id": 4,
@@ -48,9 +69,16 @@
 			"valor": 80000.00,
 			"status":"Venda",
 			"fotos":[
-				 "../pictures/ap4_1.jpg",
-				 "../pictures/ap4_2.jpg"
-			]
+				 "./pictures/ap4_1.jpg",
+				 "./pictures/ap4_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 3,
+				"disponibilidade": 5,
+				"documetacao": 1,
+				"media": 2.75
+			}
 		},
 		{
 		    "id": 5,
@@ -61,38 +89,19 @@
 			"valor": 755.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "../pictures/ap5_1.jpg",
-				 "../pictures/ap5_2.jpg"
-			]
+				 "./pictures/ap5_1.jpg",
+				 "./pictures/ap5_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 1,
+				"disponibilidade": 3,
+				"documetacao": 3,
+				"media": 2
+			}
 		},
 		{
-		    "id": 11 ,
-			"nome": "Sala/Conjunto",
-			"endereco": "Avenida Orlando Hardt, Centro - Jacarei/SP",
-			"tipoImovel" : "Sala Comercial",
-			"tipoNegocio" : "Comercial",
-			"valor": 450 ,
-			"status":"Aluguel",
-			"fotos":[
-				 "../pictures/ap11_1.jpg",
-				 "../pictures/ap11_2.jpg"
-			]
-		},
-		{
-		    "id": 12,
-			"nome": "Sala comerical no centro",
-			"endereco": "Rua Carlos de Campos, Parque Itamarati - Jacarei/SP",
-			"tipoImovel" : "Sala Comercial",
-			"tipoNegocio" : "Comercial",
-			"valor": 120.000 ,
-			"status":"Venda",
-			"fotos":[
-				 "../pictures/ap12_1.jpg",
-				 "../pictures/ap12_2.jpg"
-			]
-		},
-		{
-		    "id": 5,
+		    "id": 6,
 			"nome": "Apartamento com 3 dormitórios - Monte Castelo- SJC",
 			"endereco": "Avenida Presidente Juscelino Kubitschek, Monte Castelo - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -100,12 +109,19 @@
 			"valor": 830.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap6_1.jpg",
+				"./pictures/ap6_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 3,
+				"infra": 3,
+				"disponibilidade": 1,
+				"documetacao": 3,
+				"media": 3
+			}
 		},
 		{
-		    "id": 6,
+		    "id": 7,
 			"nome": "LINDO APARTAMENTO - FLAMBOYANT - SJC - LOCAÇÃO",
 			"endereco": "Rua Sandro Bezerra da Silva, Pq. Residencial Flamboyant - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -113,11 +129,18 @@
 			"valor": 212000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap7_1.jpg",
+				"./pictures/ap7_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 4,
+				"infra": 2,
+				"disponibilidade": 5,
+				"documetacao": 4,
+				"media": 4
+			}
 		},{
-		    "id": 7,
+		    "id": 8,
 			"nome": "LINDO APARTAMENTO - SEMI MOBILIADO - JARDIM ANHEMBI - SJC - LOCAÇÃO",
 			"endereco": "Rua Serra do Ibiacaba, Jardim Anhembi - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -125,12 +148,19 @@
 			"valor": 1000.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap8_1.jpg",
+				"./pictures/ap8_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 3,
+				"disponibilidade": 5,
+				"documetacao": 1,
+				"media": 3
+			}
 		},
 		{
-		    "id": 8,
+		    "id": 9,
 			"nome": "ÓTIMO APARTAMENTO - ESPLANADA - SJC - LOCAÇÃO",
 			"endereco": "Avenida São joão, Jardim Esplanada - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -138,12 +168,19 @@
 			"valor": 1100.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap9_1.jpg",
+				"./pictures/ap9_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 1 ,
+				"infra": 3,
+				"disponibilidade": 4,
+				"documetacao": 1,
+				"media": 3
+			}
 		},
 		{
-		    "id": 9,
+		    "id": 10,
 			"nome": "Apartamento com 2 dormitórios - CENTRO - SJC",
 			"endereco": "Machado Sidney, Centro - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -151,12 +188,19 @@
 			"valor": 1180.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap10_1.jpg",
+				"./pictures/ap10_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 3,
+				"disponibilidade": 5,
+				"documetacao": 1,
+				"media": 3
+			}
 		},
 		{
-		    "id": 10,
+		    "id": 11,
 			"nome": "LINDO APARTAMENTO - JARDIM AMÉRICA - SJC - LOCAÇÃO",
 			"endereco": "Rua Andorra, Jardim América - SJC/SP",
 			"tipoImovel" : "Apartamento",
@@ -164,12 +208,59 @@
 			"valor": 1200.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap11_1.jpg",
+				"./pictures/ap11_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 4 ,
+				"infra": 2,
+				"disponibilidade": 3,
+				"documetacao": 1,
+				"media": 3
+			}
+		},
+		{
+		    "id": 12 ,
+			"nome": "Sala/Conjunto",
+			"endereco": "Avenida Orlando Hardt, Centro - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 450 ,
+			"status":"Aluguel",
+			"fotos":[
+				 "./pictures/ap12_1.jpg",
+				 "./pictures/ap12_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 5,
+				"infra": 3,
+				"disponibilidade": 1,
+				"documetacao": 2,
+				"media": 3
+			}
 		},
 		{
 		    "id": 13,
+			"nome": "Sala comerical no centro",
+			"endereco": "Rua Carlos de Campos, Parque Itamarati - Jacarei/SP",
+			"tipoImovel" : "Sala Comercial",
+			"tipoNegocio" : "Comercial",
+			"valor": 120.000 ,
+			"status":"Venda",
+			"fotos":[
+				 "./pictures/ap13_1.jpg",
+				 "./pictures/ap12_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 2 ,
+				"infra": 5,
+				"disponibilidade": 2,
+				"documetacao": 1,
+				"media": 3
+			}
+		},
+		{
+		    "id": 14,
 			"nome": "Splendor Residence Family Club",
 			"endereco": "Avenida Edouard Six - Jardim Paraíba - JACAREÍ/SP",
 			"tipoImovel" : "Apartamento",
@@ -177,12 +268,19 @@
 			"valor":550000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap14_1.jpg",
+				"./pictures/ap14_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 1 ,
+				"infra": 5,
+				"disponibilidade": 2,
+				"documetacao": 3,
+				"media": 3
+			}
 		},
 		{
-		    "id": 14,
+		    "id": 15,
 			"nome": "Garden Family Club",
 			"endereco": "Avenida Maria augusta Fagundes Gomes, Residencial São Paulo - JACAREÍ/SP",
 			"tipoImovel" : "Apartamento",
@@ -190,9 +288,16 @@
 			"valor": 600000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
-			]
+				"./pictures/ap15_1.jpg",
+				"./pictures/ap15_2.jpg"
+			],
+			"avaliacoes": {
+				"arredores": 3 ,
+				"infra": 4,
+				"disponibilidade": 2,
+				"documetacao": 4,
+				"media": 4
+			}
 		}
 	]
 }

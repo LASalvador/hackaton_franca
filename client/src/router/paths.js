@@ -10,7 +10,7 @@ export default [
     view: 'Dashboard'
   },
   {
-    path: '/user-profile',
+    path: '/chat',
     name: 'User Profile',
     view: 'UserProfile'
   },
@@ -39,5 +39,10 @@ export default [
     path: '/upgrade',
     name: 'Upgrade to PRO',
     view: 'Upgrade'
+  },
+  {
+    path: '/teste',
+    name: 'Avaliação',
+    view: 'TableList1'
   }
 ]

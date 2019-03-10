@@ -13,14 +13,14 @@
           </v-card-text>
           <div v-for="mensagem in arrayHistoricoConversa" :key="mensagem.id">
             <div class="text-xs-left" v-if="mensagem.modelo !== 'resposta'">
-              <v-chip color="green" text-color="white">
-                <v-avatar color="green darken-4">F</v-avatar>
+              <v-chip color="#00a5d3" text-color="white">
+                <v-avatar color="#0087a5">F</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
             <div class="text-xs-right" v-else>
-              <v-chip color="blue darken-1" text-color="white">
-                <v-avatar color="blue darken-4">Eu</v-avatar>
+              <v-chip color="#ae62a4" text-color="white">
+                <v-avatar color="#56539f">Eu</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
@@ -28,37 +28,70 @@
         </material-card>
         
         <material-card v-if="objetoResposta">
-          <div v-if="objetoResposta.tipo === 'botao'">
-            <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-              <v-btn small color="blue accent-2" @click="responder(opcao)">
-                {{opcao.texto}}
-              </v-btn>
-            </div>
-          </div>
-
-          <div v-if="objetoResposta.tipo === 'card'">
-            <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-              <v-btn block color="blue accent-2" @click="responder(opcao)">
-                {{opcao.texto}}
-              </v-btn>
-            </div>
-          </div>
-
-          <div v-if="objetoResposta.tipo === 'numerico'">
-            <v-text-field v-model="objetoResposta.resposta" label="Digite uma resposta"></v-text-field>
-            <v-btn @click="responder(objetoResposta.resposta)" color="success">text</v-btn>
-          </div>
+          <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
+            <v-flex xs10>
+              <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
+                <v-btn block small color="#00a5d3" @click="responder(opcao)">
+                  {{opcao.texto}}
+                </v-btn>
+              </div>
+            </v-flex>
+          </v-layout>
 
           <div v-if="objetoResposta.tipo === 'texto'">
             <v-flex justify-space-between>
-              <v-text-field v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
+              <v-text-field color="#00a5d3" :type="objetoResposta.tipoDado" v-model="objetoResposta.texto" :label="objetoResposta.label" append-icon="mdi-send" @click:append="responder({texto: objetoResposta.texto})"></v-text-field>
             </v-flex>
+          </div>
+
+          <div v-if="objetoResposta.tipo === 'resultados'">
+            <v-layout v-for="imovel in objetoResposta.opcoes" :key="imovel.id">
+              <v-flex xs12>
+                <v-card color="#DDDDDD" text-color="white" :title="imovel.nome" @click="objetoImovelSelecionado = imovel; sheet = true">
+                  <v-img :src="imovel.fotos[0]" aspect-ratio="2.30"></v-img>
+                  <v-card-title>
+                    <div class="title">{{imovel.nome}}</div>
+                    <p class="grey--text">{{imovel.endereco}}</p>
+                    <p class="grey--text">{{imovel.tipoImovel}} - {{imovel.status}} - Valor R$ {{imovel.valor.toFixed(2)}}</p>
+                  </v-card-title>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
+
+          <div v-if="objetoResposta.tipo === 'component'">
+            <reports v-if="objetoResposta.modelo === 'reportar'"></reports>
+            <avaliar v-if="objetoResposta.modelo === 'avaliar'"></avaliar>
+            <anunciar v-if="objetoResposta.modelo === 'anunciar'"></anunciar>
           </div>
 
         </material-card>
         
       </v-flex>
     </v-layout>
+
+    <v-bottom-sheet v-model="sheet">
+      <v-container v-if="sheet">
+        <v-layout>
+          <v-flex xs12>
+            <v-card>
+              <v-img :src="objetoImovelSelecionado.fotos[1]"></v-img>
+              <v-rating v-model="rating" color="#00a5d3" readonly></v-rating>
+              <v-divider></v-divider>
+                <v-card-title>
+                <div>
+                  <span class="headline">Imovel</span>
+                  <v-spacer></v-spacer>
+                  <span class="headline">Status</span>
+                
+                <div class="grey--text font-weight-light">valor</div>
+                </div>
+              </v-card-title>      
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-bottom-sheet>
   </v-container>
 </template>
 

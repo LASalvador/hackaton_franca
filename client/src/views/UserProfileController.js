@@ -1,6 +1,16 @@
-import * as easings from 'vuetify/es5/util/easing-patterns'
+import imoveis from '@/dates/json/houses.json'
+import reports from './Maps'
+import avaliar from './TableList1'
+import anunciar from './Icons'
+
 export default {
+  components: {
+    'reports': reports,
+    'avaliar': avaliar,
+    'anunciar': anunciar
+  },
   created() {
+    this.arrayImoveis = imoveis.houses
     this.avancarConversa()
   },
   data() {
@@ -10,7 +20,7 @@ export default {
         {
           id: 0,
           foiExibido: false,
-          pausaEscrita: 2000,
+          pausaEscrita: 2,
           modelo: 'informacao',
           texto: 'Oi, tudo bem? Eu sou o Francis!'
         },
@@ -22,24 +32,11 @@ export default {
           texto: 'Vou te auxiliar hoje!'
         },
         {
-          id: 2,
+          id: 4,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Qual o seu nome?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'texto',
-            label: 'Meu nome é...'
-          }
-        }, 
-        {
-          id: 3,
-          foiExibido: false,
-          pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'O que você deseja fazer?',
+          texto: 'O que você precisa fazer?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -53,19 +50,22 @@ export default {
               {
                 id: 1,
                 texto: 'Comprar um imóvel',
-                funcao: 'alugar'
+                funcao: 'comprar'
               },
               {
                 id: 2,
-                texto: 'Anunciar meu imóvel'
+                texto: 'Anunciar meu imóvel',
+                funcao: 'anunciar'
               },
               {
                 id: 3,
-                texto: 'Avaliar um imóvel'
+                texto: 'Avaliar um imóvel',
+                funcao: 'avaliar'
               },
               {
                 id: 4,
-                texto: 'Reportar um problema'
+                texto: 'Reportar um problema',
+                funcao: 'reportar'
               }
             ]
           }
@@ -76,118 +76,59 @@ export default {
           id: 0,
           foiExibido: false,
           pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Você quer um imóvel para que?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
+          modelo: 'informacao',
+          texto: 'Acho que ainda não nos conhecemos!',
         },
-        /*{
+        {
           id: 1,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Seria melhor alugar ou comprar ?',
+          texto: 'Qual o seu nome?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
+            tipo: 'texto',
+            tipoDado: 'text',
+            label: 'Meu nome é...',
+            texto: ''
           }
         },
         {
           id: 2,
           foiExibido: false,
           pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Qual o tipo do imóvel?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
+          modelo: 'informacao',
+          texto: 'Muito prazer!',
         },
         {
           id: 3,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Você prefere espaço ou comodidade?',
+          texto: 'Gostaria de saber sua idade...',
           resposta: {
             visivel: true,
             modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
+            tipo: 'texto',
+            tipoDado: 'number',
+            label: 'Minha idade é...',
+            texto: ''
           }
-        },*/
+        },    
         {
           id: 4,
           foiExibido: false,
           pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Quais arredores são melhores?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Natureza e parques',
-              },
-              {
-                id: 1,
-                texto: 'Centro da cidade',
-              },
-            ]
-          }
-        },
+          modelo: 'informacao',
+          texto: 'Hmm, você é jovem como eu 😀!',
+        },   
         {
           id: 5,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Em que cidade você deseja morar?',
+          texto: 'Qual tipo de imóvel te atende?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -195,11 +136,19 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'São José dos Campos',
+                texto: 'Casa',
               },
               {
                 id: 1,
-                texto: 'Jacareí',
+                texto: 'Apartamento ou casa em condomínio',
+              },
+              {
+                id: 2,
+                texto: 'Chácara ou sítio',
+              },
+              {
+                id: 3,
+                texto: 'Terreno ou terreno em condomínio',
               },
             ]
           }
@@ -209,7 +158,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Você tem quantos filhos?',
+          texto: 'Legal! Quantos dormitórios você precisa?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -217,15 +166,15 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Nenhum',
+                texto: 'Apenas 1',
               },
               {
                 id: 1,
-                texto: '1',
+                texto: 'Entre 1 e 3'
               },
               {
-                id: 1,
-                texto: '2',
+                id: 2,
+                texto: 'Mais de 3'
               },
             ]
           }
@@ -235,7 +184,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Você recebe visitas com frequência?',
+          texto: 'Suítes são necessárias?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -243,11 +192,15 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Sim',
+                texto: 'Apenas 1',
               },
               {
                 id: 1,
-                texto: 'Não',
+                texto: 'Entre 1 e 3'
+              },
+              {
+                id: 2,
+                texto: 'Mais de 3'
               },
             ]
           }
@@ -257,7 +210,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quantos carros tem na sua família?',
+          texto: 'Você tem carro?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -265,11 +218,15 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: '1',
+                texto: 'Apenas 1, meu possante...',
               },
               {
                 id: 1,
-                texto: '2',
+                texto: 'Tenho 2 xodós'
+              },
+              {
+                id: 2,
+                texto: 'Mais de 3, sim, isso mesmo'
               },
             ]
           }
@@ -279,48 +236,29 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Você mora sozinho?',
+          texto: 'Beleza! Qual o valor máximo do imóvel?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Sim',
-              },
-              {
-                id: 1,
-                texto: 'Não',
-              },
-            ]
+            tipo: 'texto',
+            tipoDado: 'number',
+            label: 'Consigo pagar até...',
+            texto: ''
           }
-  
         },
         {
           id: 10,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quais opções de lazer você mais gosta entre fazer um churrasco, nadas na piscina, jogar tênis...',
+          texto: 'Sobre espaço, qual a área máxima?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Churrasco',
-              },
-              {
-                id: 1,
-                texto: 'Nadar na piscina',
-              },
-              {
-                id: 2,
-                texto: 'Jogar tênis',
-              },
-            ]
+            tipo: 'texto',
+            tipoDado: 'number',
+            label: 'Até quantos metros quadrados?',
+            texto: ''
           }
         },
         {
@@ -328,7 +266,73 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'O que tem que ter no seu imóvel?(Ar condicionado, lareira, mobiliado)',
+          texto: 'Na área de lazer...',
+          resposta: {
+            visivel: true,
+            modelo: 'resposta',
+            tipo: 'botao',
+            opcoes: [
+              {
+                id: 0,
+                texto: 'Meu lazer é fazer churrasco',
+              },
+              {
+                id: 1,
+                texto: 'Gosto muito de piscina'
+              },
+              {
+                id: 2,
+                texto: 'Playground para as crianças!'
+              },
+              {
+                id: 3,
+                texto: 'Jogo tênis'
+              },
+              {
+                id: 4,
+                texto: 'Gosto é de um salão de festas'
+              },
+              {
+                id: 5,
+                texto: 'Tem que ter sala de jogos'
+              },
+            ]
+          },
+        },
+        {
+          id: 12,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'A minha casa dos sonhos...'
+        },
+        {
+          id: 13,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Tem que ter uma banheira bem grande!'
+        },
+        {
+          id: 14,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Opa! Conversa errada hehe'
+        },
+        {
+          id: 15,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Voltando ao seu imóvel'
+        },
+        {
+          id: 16,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'pergunta',
+          texto: 'O que você quer muito?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -340,21 +344,32 @@ export default {
               },
               {
                 id: 1,
-                texto: 'Lareira',
+                texto: 'Uma lareira ❤'
               },
               {
                 id: 2,
-                texto: 'Mobilia',
+                texto: 'Imóvel mobiliado'
+              },
+              {
+                id: 3,
+                texto: 'Uma sauna quentinha'
               },
             ]
-          }
+          },
         },
         {
-          id: 12,
+          id: 17,
+          foiExibido: false,
+          pausaEscrita: 2,
+          modelo: 'informacao',
+          texto: 'Ultima pergunta, juro hehe'
+        },
+        {
+          id: 18,
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quais cômodos são indispensáveis?(Varanda, sacada, cozinha americana...)',
+          texto: 'Sobre segurança...',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -362,111 +377,41 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Precisa ter alarme',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Condomínio fechado'
+              },
+              {
+                id: 2,
+                texto: 'Interfone'
+              },
+              {
+                id: 3,
+                texto: 'Portaria 24 horas'
+              },
+              {
+                id: 4,
+                texto: 'Vigilância 24 horas'
               },
             ]
-          }
+          },
         },
-        {
-          id: 13,
-          foiExibido: false,
-          pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Quanto a segurança(alarme, condomínio fechado...)',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
-        },
-        {
-          id: 14,
-          foiExibido: false,
-          pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Você gosta de andar de bicicleta',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
-        },
-        {
-          id: 15,
-          foiExibido: false,
-          pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Você vai muito ao shopping?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
-        },
-        {
-          id: 16,
-          foiExibido: false,
-          pausaEscrita: 2,
-          modelo: 'pergunta',
-          texto: 'Em qual bairro você trabalha?',
-          resposta: {
-            visivel: true,
-            modelo: 'resposta',
-            tipo: 'botao',
-            opcoes: [
-              {
-                id: 0,
-                texto: 'Morar',
-              },
-              {
-                id: 1,
-                texto: 'Alugar',
-              },
-            ]
-          }
-        }
       ],
+      arrayImoveis: [],
       objetoResposta: null,
+      exibComponent: false,
+      objetoImovelSelecionado: {},
+      sheet: false,
+      rating: 4,
     }
   },
   methods: {
     avancarConversa() {
-
+      
       let objetoProximaInteracao = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
+      let interacaoParaHistorico = this.arrayScriptPrincipal.filter(e => e.foiExibido === false)[0];
       
       if (!objetoProximaInteracao) {
         this.objetoResposta = null
@@ -487,28 +432,30 @@ export default {
         
         return false
       }
-
-      objetoProximaInteracao.id = this.arrayHistoricoConversa.length
+      
+      interacaoParaHistorico.id = this.arrayHistoricoConversa.length
       this.arrayHistoricoConversa.push(objetoProximaInteracao)
       
       let avancaNovamente = objetoProximaInteracao.modelo === 'pergunta' && objetoProximaInteracao.resposta ? false : true
       
-      this.arrayScriptPrincipal.forEach(item => {
+      for (let index = 0; index < this.arrayScriptPrincipal.length; index++) {
+        const item = this.arrayScriptPrincipal[index];
+        
         if (item.id === objetoProximaInteracao.id) {
-          item.foiExibido = true
+          this.arrayScriptPrincipal[index].foiExibido = true
           
           if (avancaNovamente) {
             this.avancarConversa()
           } else this.objetoResposta = objetoProximaInteracao.resposta
+          break
         }
-      })
+      }
 
       this.$vuetify.goTo(9999, { duration: 800, offset: 0, easing: 'easeInOutCubic' })
       return true
 
     },
     responder(resposta) {
-      
       let respostaUsuario = resposta.texto || resposta
 
       this.arrayHistoricoConversa.push({
@@ -517,13 +464,74 @@ export default {
         modelo: 'resposta',
         texto: respostaUsuario
       })
-      
+
       if (resposta.funcao) {
         if (resposta.funcao === 'alugar' || resposta.funcao === 'comprar') {
-          this.arrayScriptCompraAluguel.forEach(item => {
+          /*this.arrayScriptCompraAluguel.forEach(item => {
             item.id = this.arrayScriptPrincipal.length
             this.arrayScriptPrincipal.push(item)
+          })*/
+
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Vamos ver alguns imóveis?',
+            resposta: {
+              visivel: true,
+              modelo: 'resposta',
+              tipo: 'resultados',
+              opcoes: this.arrayImoveis
+            }
           })
+        }
+        if (resposta.funcao === 'anunciar') {
+         
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Vamos caprichar nos detalhes do anuncio!',
+            resposta: {
+              visivel: true,
+              modelo: 'anunciar',
+              tipo: 'component'
+            }
+          })
+        }
+        if (resposta.funcao === 'avaliar') {
+
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Sua avaliação é importante para nós',
+            resposta: {
+              visivel: true,
+              modelo: 'avaliar',
+              tipo: 'component'
+            }
+          })
+
+        }
+        if (resposta.funcao === 'reportar') {
+
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Vamos resolver seu problema!',
+            resposta: {
+              visivel: true,
+              modelo: 'reportar',
+              tipo: 'component'
+            }
+          })
+
         }
       }
 
