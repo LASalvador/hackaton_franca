@@ -8,6 +8,7 @@
             <v-select
                 :items="items"
                 label="Selecione a categoria da Reclamação"
+                color="#0087a5"
               ></v-select>
             </div>
             <v-textarea v-model="teste" label="Descreva com detalhes sua reclamação" xs12></v-textarea>
