@@ -1,95 +1,80 @@
 <template>
-  <v-container fill-height fluid grid-list-xl xs12>
-    <v-layout wrap xs12>
-      <v-flex xs12 md8>
-        <material-card xs12>
-          <v-card-text class="text-right" xs12>
-            <v-container py-0 xs12>
-              <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
-              <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
-                <v-flex>
-                  <div>
-                   <span>
-                        {{mensagem.texto}}
-                   </span>
-                  </div>
-                  <div  v-if="mensagem.tipo == 'pergunta'">
-                   <v-rating></v-rating>
-                  </div>
+  <v-container>
+    <v-layout>
+      <v-flex xs12>
+        <v-card>
+          <v-layout>
+             <v-flex xs6 d-flex>
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/ratings/fortnite1.png"
+              ></v-img>
+            </v-flex>
+            <v-flex xs6 d-flex>
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/ratings/fortnite1.png"
+              ></v-img>
+            </v-flex>
+          </v-layout>
+          <v-divider></v-divider>
+            <v-card-title>
+            <div>
+              <span class="headline">Imovel</span>  
+            <div class="grey--text font-weight-light">valor</div>
+            </div>
+          </v-card-title>
+          <v-card-text>
+            <v-layout>
+                <v-flex xs12>
+                    <span><b>Endereco:</b></span>
+                    <span></span>
+                    <br>
+                    <span><b>Tipo de Imovel:</b></span>
+                    <span></span>
+                    <br>
+                    <span><b>Tipo de negocio</b></span>
+                    <span></span>
+                    <br>
+                    <span><b>Valor</b></span>
+                    <span></span>
+                    <br>
+                    <span><b>Este imovel é para:</b></span>
+                    <span></span>
+                    <br>
                 </v-flex>
-                <br>
-              </v-layout>
-              <div>
-                <v-btn @click="teste" small color="red">
-                  Enviar Avaliacao
-                </v-btn>
-              </div>
-            </v-container>
-          </v-card-text>
-        </material-card>
+                <v-flex xs12>
+                    <span>Avaliacoes</span>
+                    <br>
+                    <span>Media</span>
+                    <v-rating v-model="rating" color="yellow" :readonly="true"></v-rating>
+                    <br>
+                    <span><b>Arredores:</b></span>
+                    <span>x</span>
+                    <br>
+                    <span><b>Infraestrutura:</b></span>
+                    <span>x</span>
+                    <br>
+                    <span><b>Disponibilidade:</b></span>
+                    <span>x</span>
+                    <br>
+                    <span><b>Documentação:</b></span>
+                    <span>x</span>
+                </v-flex>
+            </v-layout>
+          </v-card-text>        
+        </v-card>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+
 export default {
-  data () {
-    return {
-      arrayConversaChat: [
-        {
-          id: 1,
-          tipo: 'mensagem',
-          remetente: 'Francis',
-          identificador: "0",
-          texto: ''
-        },
-        {
-          id: 2,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: "1",
-          texto: 'O quanto os locais proximos são uteis para você?'
-        },
-        {
-          id: 3,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: "2",
-          texto: 'O quanto você considera o imovel acessivel?'
-        },
-        {
-          id: 4,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: "2",
-          texto: 'O quanto você acha o tamanho dos comodos apropriados?'
-        },
-        {
-          id: 5,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: "1",
-          texto: 'O que nota voce dá a estetica do imovel?'
-        },
-        {
-          id: 6,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: "1",
-          texto: 'O que nota voce dá a estrutura do imovel?'
-        }
-      ],
-      respostasConversa: [],
-      resposta: null,
-      slider: 0
-    }
-  },
-  methods: {
-    teste () {
-      this.respostasConversa.push(resposta)
-      console.log('teseee', this.respostasConversa)
-    }
-  }
+  data: () => ({
+    rating: 4
+  })
 }
 </script>
+ 
+<style lang="scss">
+</style>

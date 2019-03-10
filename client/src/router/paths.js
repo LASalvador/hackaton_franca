@@ -10,7 +10,7 @@ export default [
     view: 'Dashboard'
   },
   {
-    path: '/user-profile',
+    path: '/chat',
     name: 'User Profile',
     view: 'UserProfile'
   },

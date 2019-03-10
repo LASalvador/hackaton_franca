@@ -1,6 +1,11 @@
 import imoveis from '@/dates/json/houses.json'
 import image from '@/dates/pictures/ap1_1.jpg'
+import reports from './Maps'
+
 export default {
+  components: {
+    'reports': reports
+  },
   created() {
     this.arrayImoveis = imoveis.houses
     this.image = image
@@ -395,6 +400,7 @@ export default {
       ],
       arrayImoveis: [],
       objetoResposta: null,
+      exibComponent: false
     }
   },
   methods: {
@@ -454,7 +460,7 @@ export default {
         modelo: 'resposta',
         texto: respostaUsuario
       })
-      
+      console.log('>>>>>>>>>>>>>>>>>>>>', resposta.funcao)
       if (resposta.funcao) {
         if (resposta.funcao === 'alugar' || resposta.funcao === 'comprar') {
           /*this.arrayScriptCompraAluguel.forEach(item => {
@@ -499,15 +505,10 @@ export default {
           })
         }
         if (resposta.funcao === 'reportar') {
-          /*this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
-          })*/
-
-          this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
-          })
+          this.objetoResposta =  {
+            tipo: 'component',
+            modelo: 'reportar'
+          }
         }
       }
 

@@ -61,7 +61,9 @@
             </v-layout>
           </div>
 
-
+          <div v-if="objetoResposta.tipo === 'component'">
+            <reports v-if="objetoResposta.modelo === 'reportar'"></reports>
+          </div>
 
         </material-card>
         
