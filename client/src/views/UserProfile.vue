@@ -29,7 +29,7 @@
         
         <material-card v-if="objetoResposta">
           <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
-            <v-flex xs8>
+            <v-flex xs10>
               <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
                 <v-btn block small color="#00a5d3" @click="responder(opcao)">
                   {{opcao.texto}}
