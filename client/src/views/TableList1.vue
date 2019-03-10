@@ -4,6 +4,9 @@
       <v-flex xs12 md8>
         <v-container py-0 xs12>
           <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
+          <v-select 
+          :items="arrayNomes"
+          label="Selecione um imovel"></v-select>
           <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
             <v-flex>
               <div>
@@ -30,7 +33,7 @@
           :right="right"
           v-model="snackbar"
         >
-          <div>Obrigado por completar a avaliação. Em breve entaremos em contato!</div>
+          <div>Obrigado por completar a avaliação. Sua opinião é muito válida</div>
           <v-icon
             size="16"
             @click="snackbar = false"
@@ -42,9 +45,16 @@
 </template>
 
 <script>
+import imoveis from '@/dates/json/houses.json'
 export default {
+  created() {
+    this.arrayImoveis = imoveis.houses,
+    this.nomesLista()
+  },
   data () {
     return {
+      arrayImoveis: [] ,
+      arrayNomes: [],
       arrayConversaChat: [
         {
           id: 1,
@@ -110,7 +120,13 @@ export default {
         this[loc] = true
       }
       this.snackbar = true
-    }  }
+    },
+    nomesLista() {
+      this.arrayImoveis.forEach(a => {
+        this.arrayNomes.push(a.nome)
+      });
+    }  
+  }
 }
 </script>
 <style scoped>
