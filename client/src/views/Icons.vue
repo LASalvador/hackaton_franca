@@ -72,7 +72,7 @@
           :right="right"
           v-model="snackbar"
         >
-          <div>Obrigado por mandar seus dados. Em breve entaremos em contato!</div>
+          <div>Obrigado por mandar seus dados do seu imovel. Em breve entaremos em contato!</div>
           <v-icon
             size="16"
             @click="snackbar = false"

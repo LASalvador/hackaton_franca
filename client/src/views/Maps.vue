@@ -21,9 +21,8 @@
           :top="top"
           :left="left"
           :right="right"
-          v-model="snackbar"
-        >
-          <div>Obrigado por mandar seus dados. Em breve entaremos em contato!</div>
+          v-model="snackbar">
+          <div>Obrigado pelas informações. Em breve entaremos em contato!</div>
           <v-icon
             size="16"
             @click="snackbar = false"
@@ -43,7 +42,6 @@ export default {
         'Problema eletrico',
         'Pintura'
         ],
-        teste: null,
         top: true,
         bottom: false,
         left: false,
@@ -52,7 +50,17 @@ export default {
       }
   },
   methods: {
-    
+    snack (...args) {
+      this.top = false
+      this.bottom = false
+      this.left = false
+      this.right = false
+
+      for (const loc of args) {
+        this[loc] = true
+      }
+      this.snackbar = true
+    }
   }
 }
 </script>
