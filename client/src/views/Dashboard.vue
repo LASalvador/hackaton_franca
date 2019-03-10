@@ -11,7 +11,7 @@
         <material-chart-card
           :data="dailySalesChart.data"
           :options="dailySalesChart.options"
-          color="info"
+          color="black"
           type="Line"
         >
           <h4 class="title font-weight-light">Score por Região</h4>
@@ -27,7 +27,7 @@
           :data="emailsSubscriptionChart.data"
           :options="emailsSubscriptionChart.options"
           :responsive-options="emailsSubscriptionChart.responsiveOptions"
-          color="green"
+          color="black"
           type="Bar"
         >
           <h4 class="title font-weight-light">Quantidade de Avaliações</h4>
@@ -42,7 +42,7 @@
         <material-chart-card
           :data="dataCompletedTasksChart.data"
           :options="dataCompletedTasksChart.options"
-          color="red"
+          color="black"
           type="Bar"
         >
           <h3 class="title font-weight-light">Abertura de Reclamações</h3>
@@ -55,7 +55,7 @@
         <material-chart-card
           :data="idade.data"
           :options="idade.options"
-          color="blue"
+          color="black"
           type="Line">
         <h3 class="title font-weight-light">Média de idade dos Usuários</h3>
           <template slot="actions">
