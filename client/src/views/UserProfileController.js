@@ -70,7 +70,7 @@ export default {
               {
                 id: 1,
                 texto: 'Comprar um imóvel',
-                funcao: 'alugar'
+                funcao: 'comprar'
               },
               {
                 id: 2,
@@ -319,7 +319,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quais opções de lazer você mais gosta entre fazer um churrasco, nadas na piscina, jogar tênis...',
+          texto: 'Qual a sua opção de lazer preferida?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -345,7 +345,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'O que tem que ter no seu imóvel?(Ar condicionado, lareira, mobiliado)',
+          texto: 'O que tem que ter no seu imóvel?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -371,7 +371,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quais cômodos são indispensáveis?(Varanda, sacada, cozinha americana...)',
+          texto: 'Quais cômodos são indispensáveis?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -379,12 +379,16 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Varanda',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Sacada',
               },
+              {
+                id: 2,
+                texto: 'Cozinha americana',
+              }
             ]
           }
         },
@@ -393,7 +397,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Quanto a segurança(alarme, condomínio fechado...)',
+          texto: 'Quanto a segurança, o que é indispensável?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -401,11 +405,11 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Alarme',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Condomínio fechado',
               },
             ]
           }
@@ -415,7 +419,7 @@ export default {
           foiExibido: false,
           pausaEscrita: 2,
           modelo: 'pergunta',
-          texto: 'Você gosta de andar de bicicleta',
+          texto: 'Você gosta de andar de bicicleta?',
           resposta: {
             visivel: true,
             modelo: 'resposta',
@@ -423,11 +427,11 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Sim',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Não',
               },
             ]
           }
@@ -445,11 +449,11 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Sim',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Não',
               },
             ]
           }
@@ -467,11 +471,19 @@ export default {
             opcoes: [
               {
                 id: 0,
-                texto: 'Morar',
+                texto: 'Aquarius',
               },
               {
                 id: 1,
-                texto: 'Alugar',
+                texto: 'Centro',
+              },
+              {
+                id: 2,
+                texto: 'Jd. Paulista',
+              },
+              {
+                id: 3,
+                texto: 'Outro',
               },
             ]
           }

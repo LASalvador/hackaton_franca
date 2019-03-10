@@ -28,13 +28,15 @@
         </material-card>
         
         <material-card v-if="objetoResposta">
-          <div v-if="objetoResposta.tipo === 'botao'">
-            <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
-              <v-btn small color="#00a5d3" @click="responder(opcao)">
-                {{opcao.texto}}
-              </v-btn>
-            </div>
-          </div>
+          <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
+            <v-flex xs8>
+              <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
+                <v-btn block small color="#00a5d3" @click="responder(opcao)">
+                  {{opcao.texto}}
+                </v-btn>
+              </div>
+            </v-flex>
+          </v-layout>
 
           <div v-if="objetoResposta.tipo === 'card'">
             <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
