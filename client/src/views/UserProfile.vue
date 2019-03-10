@@ -27,7 +27,7 @@
           </div>
         </material-card>
         
-        <material-card v-if="objetoResposta">
+        <material-card v-if="objetoResposta && objetoResposta.visivel">
           <v-layout row wrap v-if="objetoResposta.tipo === 'botao'" justify-space-around>
             <v-flex xs10>
               <div v-for="opcao in objetoResposta.opcoes" :key="opcao.id">
