@@ -451,7 +451,7 @@ export default {
         }
       }
 
-      this.$vuetify.goTo(9999, { duration: 800, offset: 0, easing: 'easeInOutCubic' })
+      //this.$vuetify.goTo(9999, { duration: 800, offset: 0, easing: 'easeInOutCubic' })
       return true
 
     },
