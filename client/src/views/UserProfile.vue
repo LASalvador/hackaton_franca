@@ -64,6 +64,7 @@
           <div v-if="objetoResposta.tipo === 'component'">
             <reports v-if="objetoResposta.modelo === 'reportar'"></reports>
             <avaliar v-if="objetoResposta.modelo === 'avaliar'"></avaliar>
+            <anunciar v-if="objetoResposta.modelo === 'anunciar'"></anunciar>
           </div>
 
         </material-card>

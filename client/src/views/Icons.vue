@@ -2,75 +2,70 @@
   <v-container fill-height fluid grid-list-xl>
     <v-layout  wrap>
       <v-flex xs12 md8>
-        <material-card>
-          <v-card-text >
-            <v-container py-0>
-              <v-layout wrap >
-                <v-flex align-selfstart>
-                  <div>
-                    <spam >
-                        Preencha este formulário!
-                    </spam >
-                     
-                    <spam xs12 color="red" text-color="white">
-                      Para te ajudarmos!
-                    </spam >
-                  </div>
-                        
-                  <div>
-                    <v-text-field  id="nome" label="Nome completo"></v-text-field>
-                  </div>
-                  <div>
-                    <v-text-field   label="E-mail"></v-text-field>
-                  </div>
-                  <div>
-                    <v-text-field   label="Contato"></v-text-field>
-                  </div>
-                  <div>
-                    <spam> 
-                        Agora, insira os dados do seu imóvel!
-                    </spam>
-                  </div>
-                  <div>
-                    <v-text-field   label="Título"></v-text-field>
-                  </div>
-                   
-                  <div>
-                    <v-text-field   label="Endereço"></v-text-field>
-                  </div>
+        <v-container py-0>
+          <v-layout wrap >
+            <v-flex align-selfstart>
+              <div>
+                <span>
+                    Preencha este formulário!
+                </span>
+                  
+                <span xs12 color="red" text-color="white">
+                  Para te ajudarmos!
+                </span>
+              </div>
+                    
+              <div>
+                <v-text-field  id="nome" label="Nome completo"></v-text-field>
+              </div>
+              <div>
+                <v-text-field   label="E-mail"></v-text-field>
+              </div>
+              <div>
+                <v-text-field   label="Contato"></v-text-field>
+              </div>
+              <div>
+                <span> 
+                    Agora, insira os dados do seu imóvel!
+                </span>
+              </div>
+              <div>
+                <v-text-field   label="Título"></v-text-field>
+              </div>
+                
+              <div>
+                <v-text-field   label="Endereço"></v-text-field>
+              </div>
 
-                  <div>
-                    <v-text-field   label="Complemento"></v-text-field>
-                  </div>
-                  <div>
-                    <v-textarea   label="Descrição"></v-textarea>
-                  </div>
-                 
-                  <v-select
-                      :items="tipo_imovel"
-                      label="Tipo de Imóvel"
-                    ></v-select>
-                  <v-select
-                      :items="tipo_negocio"
-                      label="Tipo de Negócio"
-                    ></v-select>
-                      <h4 class="card-title font-weight-light">O que pretende fazer?</h4>
-                     <v-radio-group v-model="radios" :mandatory="false">
-                        <v-radio label="Alugar" value="Alugar"></v-radio>
-                        <v-radio label="Vender" value="Vender"></v-radio>
-                        <v-radio label="Comprar" value="Comprar"></v-radio>
-                      </v-radio-group>
-                      <v-btn class="enviar" color="red" @click="snack('bottom')" >
-                       Enviar
-                      </v-btn>
-                </v-flex>
-                <br>
-              </v-layout>
-            </v-container>
-          </v-card-text>
-        </material-card>
+              <div>
+                <v-text-field   label="Complemento"></v-text-field>
+              </div>
+              <div>
+                <v-textarea   label="Descrição"></v-textarea>
+              </div>
+              
+              <v-select
+                  :items="tipo_imovel"
+                  label="Tipo de Imóvel"
+                ></v-select>
+              <v-select
+                  :items="tipo_negocio"
+                  label="Tipo de Negócio"
+                ></v-select>
+                  <h4 class="card-title font-weight-light">O que pretende fazer?</h4>
+                  <v-radio-group v-model="radios" :mandatory="false">
+                    <v-radio label="Alugar" value="Alugar"></v-radio>
+                    <v-radio label="Vender" value="Vender"></v-radio>
+                    <v-radio label="Comprar" value="Comprar"></v-radio>
+                  </v-radio-group>
+                  <v-btn class="enviar" color="#0087a5" @click="snack('bottom')" >
+                    Enviar
+                  </v-btn>
+            </v-flex>
+            <br>
+          </v-layout>
+        </v-container>
         <v-snackbar
-          :color="red"
           :bottom="bottom"
           :top="top"
           :left="left"

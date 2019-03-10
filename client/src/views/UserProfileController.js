@@ -1,11 +1,13 @@
 import imoveis from '@/dates/json/houses.json'
 import reports from './Maps'
 import avaliar from './TableList1'
+import anunciar from './Icons'
 
 export default {
   components: {
     'reports': reports,
-    'avaliar': avaliar
+    'avaliar': avaliar,
+    'anunciar': anunciar
   },
   created() {
     this.arrayImoveis = imoveis.houses
@@ -488,7 +490,7 @@ export default {
             foiExibido: false,
             pausaEscrita: 2,
             modelo: 'pergunta',
-            texto: 'Sua avaliação é de extrema importancia para nós',
+            texto: 'Vamos caprichar nos detalhes do anuncio!',
             resposta: {
               visivel: true,
               modelo: 'anunciar',

@@ -14,7 +14,7 @@
           </v-flex>
         </v-layout>
         <div>
-          <v-btn small color="red" @click="snack('bottom')">Prosseguir</v-btn>
+          <v-btn small color="#0087a5" class="enviar" @click="snack('bottom')">Enviar</v-btn>
         </div>
          <v-snackbar
           :bottom="bottom"
@@ -56,3 +56,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .enviar {
+   border-radius: 20px;
+ }
+</style>

@@ -18,13 +18,12 @@
             <br>
           </v-layout>
           <div>
-            <v-btn @click="snack('bottom')" small color="red">
+            <v-btn @click="snack('bottom')" class="enviar" small color="#0087a5">
               Enviar Avaliacao
             </v-btn>
           </div>
         </v-container>
          <v-snackbar
-          :color="red"
           :bottom="bottom"
           :top="top"
           :left="left"
@@ -114,3 +113,8 @@ export default {
     }  }
 }
 </script>
+<style scoped>
+  .enviar {
+   border-radius: 20px;
+ }
+</style>
