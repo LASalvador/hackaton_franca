@@ -6,13 +6,8 @@
           <v-layout wrap >
             <v-flex align-selfstart>
               <div>
-                <span>
-                    Preencha este formulário!
-                </span>
-                  
-                <span xs12 color="red" text-color="white">
-                  Para te ajudarmos!
-                </span>
+                <span>Preencha este formulário!</span>
+                <span xs12 color="red" text-color="white">Para te ajudarmos!</span>
               </div>
                     
               <div>

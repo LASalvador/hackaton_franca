@@ -13,14 +13,14 @@
           </v-card-text>
           <div v-for="mensagem in arrayHistoricoConversa" :key="mensagem.id">
             <div class="text-xs-left" v-if="mensagem.modelo !== 'resposta'">
-              <v-chip color="#16A870" text-color="white">
-                <v-avatar color="#16AC70">F</v-avatar>
+              <v-chip color="#3D7ED7" text-color="white">
+                <v-avatar color="#4a75a2">F</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
             <div class="text-xs-right" v-else>
-              <v-chip color="#3D7ED7" text-color="white">
-                <v-avatar color="#3D7ED7">Eu</v-avatar>
+              <v-chip color="#40c491" text-color="white">
+                <v-avatar color="#16a870">Eu</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
@@ -51,8 +51,11 @@
                   <v-img :src="imovel.fotos[0]" aspect-ratio="2.30"></v-img>
                   <v-card-title>
                     <div class="title">{{imovel.nome}}</div>
-                    <p class="grey--text">{{imovel.endereco}}</p>
-                    <p class="grey--text">{{imovel.tipoImovel}} - {{imovel.status}} - Valor R$ {{imovel.valor.toFixed(2)}}</p>
+                    <div>
+                      <v-chip color="green" text-color="white" label>{{imovel.tipoImovel}} - {{imovel.status}}</v-chip>
+                      <v-chip color="green" text-color="white" label>R$ {{imovel.valor.toFixed(2)}}</v-chip>
+                    </div>
+                    <p class="black--text">{{imovel.endereco}}</p>
                   </v-card-title>
                 </v-card>
               </v-flex>
