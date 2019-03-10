@@ -58,7 +58,8 @@ export default {
         bottom: false,
         left: false,
         right: false,
-        snackbar: false
+        snackbar: false,
+        teste: null
       }
   },
   methods: {
