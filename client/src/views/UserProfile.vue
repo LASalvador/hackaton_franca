@@ -13,14 +13,14 @@
           </v-card-text>
           <div v-for="mensagem in arrayHistoricoConversa" :key="mensagem.id">
             <div class="text-xs-left" v-if="mensagem.modelo !== 'resposta'">
-              <v-chip color="#16A870" text-color="white">
-                <v-avatar color="#16AC70">F</v-avatar>
+              <v-chip color="#3D7ED7" text-color="white">
+                <v-avatar color="#4a75a2">F</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
             <div class="text-xs-right" v-else>
-              <v-chip color="#3D7ED7" text-color="white">
-                <v-avatar color="#3D7ED7">Eu</v-avatar>
+              <v-chip color="#40c491" text-color="white">
+                <v-avatar color="#16a870">Eu</v-avatar>
                 {{mensagem.texto}}
               </v-chip>
             </div>
