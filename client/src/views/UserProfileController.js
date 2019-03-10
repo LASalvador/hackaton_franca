@@ -1,6 +1,8 @@
-import * as easings from 'vuetify/es5/util/easing-patterns'
+import imoveis from '@/dates/json/houses.json'
 export default {
   created() {
+    this.arrayImoveis = imoveis.houses
+    
     this.avancarConversa()
   },
   data() {
@@ -44,15 +46,18 @@ export default {
               },
               {
                 id: 2,
-                texto: 'Anunciar meu imóvel'
+                texto: 'Anunciar meu imóvel',
+                funcao: 'anunciar'
               },
               {
                 id: 3,
-                texto: 'Avaliar um imóvel'
+                texto: 'Avaliar um imóvel',
+                funcao: 'avaliar'
               },
               {
                 id: 4,
-                texto: 'Reportar um problema'
+                texto: 'Reportar um problema',
+                funcao: 'reportar'
               }
             ]
           }
@@ -386,6 +391,7 @@ export default {
           },
         },
       ],
+      arrayImoveis: [],
       objetoResposta: null,
     }
   },
@@ -449,6 +455,44 @@ export default {
       
       if (resposta.funcao) {
         if (resposta.funcao === 'alugar' || resposta.funcao === 'comprar') {
+          /*this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })*/
+
+          this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })
+        }
+        if (resposta.funcao === 'anunciar') {
+          /*this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })*/
+
+          this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })
+        }
+        if (resposta.funcao === 'avaliar') {
+          /*this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })*/
+
+          this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })
+        }
+        if (resposta.funcao === 'reportar') {
+          /*this.arrayScriptCompraAluguel.forEach(item => {
+            item.id = this.arrayScriptPrincipal.length
+            this.arrayScriptPrincipal.push(item)
+          })*/
+
           this.arrayScriptCompraAluguel.forEach(item => {
             item.id = this.arrayScriptPrincipal.length
             this.arrayScriptPrincipal.push(item)
