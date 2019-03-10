@@ -50,6 +50,10 @@
             </material-card>
           </div>
 
+          <div v-if="objetoResposta.tipo === 'component'">
+            <reports v-if="objetoResposta.modelo === 'reportar'"></reports>
+          </div>
+
         </material-card>
         
       </v-flex>
