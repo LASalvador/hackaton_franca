@@ -1,12 +1,14 @@
 import imoveis from '@/dates/json/houses.json'
+import image from '@/dates/pictures/ap1_1.jpg'
 export default {
   created() {
     this.arrayImoveis = imoveis.houses
-    
+    this.image = image
     this.avancarConversa()
   },
   data() {
     return {
+      image: '',
       arrayHistoricoConversa: [],
       arrayScriptPrincipal: [
         {
@@ -460,9 +462,18 @@ export default {
             this.arrayScriptPrincipal.push(item)
           })*/
 
-          this.arrayScriptCompraAluguel.forEach(item => {
-            item.id = this.arrayScriptPrincipal.length
-            this.arrayScriptPrincipal.push(item)
+          this.arrayScriptPrincipal.push({
+            id: this.arrayScriptPrincipal.length,
+            foiExibido: false,
+            pausaEscrita: 2,
+            modelo: 'pergunta',
+            texto: 'Vamos ver alguns imóveis?',
+            resposta: {
+              visivel: true,
+              modelo: 'resposta',
+              tipo: 'resultados',
+              opcoes: this.arrayImoveis
+            }
           })
         }
         if (resposta.funcao === 'anunciar') {

@@ -45,10 +45,23 @@
           </div>
 
           <div v-if="objetoResposta.tipo === 'resultados'">
-            <!-- <material-card color="primary" title="Vue Material Dashboard PRO" text="Are you looking for more components? Please check our Premium Version of Vue Material Dashboard."> -->
-            <material-card color="primary" v-for="imovel in objetoResposta.opcoes" :key="imovel.id">
-            </material-card>
+            <v-layout v-for="imovel in objetoResposta.opcoes" :key="imovel.id">
+              <v-flex xs12>
+                <v-card color="#DDDDDD" text-color="white" :title="imovel.nome">
+                  <v-img :src="imovel.fotos[0]" aspect-ratio="2.30"></v-img>
+                  <v-card-title>
+                    <div class="title">{{imovel.nome}}</div>
+                    <span class="grey--text">{{imovel.endereco}}</span>
+                  </v-card-title>
+                  <v-card-text>
+                    
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
           </div>
+
+
 
         </material-card>
         
