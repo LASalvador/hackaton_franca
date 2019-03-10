@@ -74,19 +74,35 @@
       <v-container v-if="sheet">
         <v-layout>
           <v-flex xs12>
-            <v-card>
-              <v-img :src="objetoImovelSelecionado.fotos[1]"></v-img>
-              <v-rating v-model="rating" color="#00a5d3" readonly></v-rating>
-              <v-divider></v-divider>
-                <v-card-title>
-                <div>
-                  <span class="headline">Imovel</span>
-                  <v-spacer></v-spacer>
-                  <span class="headline">Status</span>
-                
-                <div class="grey--text font-weight-light">valor</div>
-                </div>
-              </v-card-title>      
+            <v-card text-color="white" :title="objetoImovelSelecionado.nome">
+              <!-- <v-img :src="objetoImovelSelecionado.fotos[1]" aspect-ratio="1.5"></v-img> -->
+              <v-carousel hide-controls hide-delimiters height="220">
+              <v-carousel-item v-for="(foto,i) in objetoImovelSelecionado.fotos" :key="i" :src="foto"></v-carousel-item>
+              </v-carousel>
+              <v-card-title>
+                <div class="title">{{objetoImovelSelecionado.nome}}</div>
+                <div class="subtitle">{{objetoImovelSelecionado.tipoImovel}} - {{objetoImovelSelecionado.status}} - Valor R$ {{objetoImovelSelecionado.valor.toFixed(2)}}</div>
+                <v-flex xs12>
+                <v-rating v-model="objetoImovelSelecionado.avaliacoes.media" readonly background-color="#ae62a4" color="indigo" size="20"></v-rating>
+                </v-flex>
+                <v-chip color="#00a5d3" text-color="white" label>
+                  Código {{objetoImovelSelecionado.id}}
+                </v-chip>
+                <v-chip color="#00a5d3" text-color="white" label>
+                  {{ ((Math.random(5) * 10) + 1).toFixed(0) }} Dormitórios
+                </v-chip>
+                <v-chip color="#00a5d3" text-color="white" label>
+                  {{ ((Math.random(1) * 1.5) + 1).toFixed(0) }} Vagas
+                </v-chip>
+                <v-chip color="#00a5d3" text-color="white" label>
+                  {{ ((Math.random(700) * 100) + 30).toFixed(0) }} m²
+                </v-chip>
+                <v-chip color="#00a5d3" text-color="white" label>
+                  {{ ((Math.random(700) * 100) + 30).toFixed(0) }} Visualizações
+                </v-chip>
+                <p text-color="black">{{objetoImovelSelecionado.endereco}}</p>
+                <p text-color="black">{{objetoImovelSelecionado.descricao}}</p>
+              </v-card-title>
             </v-card>
           </v-flex>
         </v-layout>

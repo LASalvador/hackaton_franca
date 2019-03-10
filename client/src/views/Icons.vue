@@ -16,13 +16,13 @@
               </div>
                     
               <div>
-                <v-text-field  id="nome" label="Nome completo"></v-text-field>
+                <v-text-field  color="#0087a5" label="Nome completo"></v-text-field>
               </div>
               <div>
-                <v-text-field   label="E-mail"></v-text-field>
+                <v-text-field color="#0087a5" label="E-mail"></v-text-field>
               </div>
               <div>
-                <v-text-field   label="Contato"></v-text-field>
+                <v-text-field color="#0087a5" label="Contato"></v-text-field>
               </div>
               <div>
                 <span> 
@@ -30,27 +30,29 @@
                 </span>
               </div>
               <div>
-                <v-text-field   label="Título"></v-text-field>
+                <v-text-field color="#0087a5" label="Título"></v-text-field>
               </div>
                 
               <div>
-                <v-text-field   label="Endereço"></v-text-field>
+                <v-text-field  color="#0087a5" label="Endereço"></v-text-field>
               </div>
 
               <div>
-                <v-text-field   label="Complemento"></v-text-field>
+                <v-text-field   color="#0087a5" label="Complemento"></v-text-field>
               </div>
               <div>
-                <v-textarea   label="Descrição"></v-textarea>
+                <v-textarea   color="#0087a5" label="Descrição"></v-textarea>
               </div>
               
               <v-select
                   :items="tipo_imovel"
                   label="Tipo de Imóvel"
+                  color="#0087a5"
                 ></v-select>
               <v-select
                   :items="tipo_negocio"
                   label="Tipo de Negócio"
+                  color="#0087a5"
                 ></v-select>
                   <h4 class="card-title font-weight-light">O que pretende fazer?</h4>
                   <v-radio-group v-model="radios" :mandatory="false">
@@ -107,7 +109,8 @@ export default {
     bottom: false,
     left: false,
     right: false,
-    snackbar: false
+    snackbar: false,
+    radios: ''
   }),
   methods : {
     snack (...args) {
