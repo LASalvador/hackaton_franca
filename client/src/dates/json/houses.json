@@ -109,8 +109,8 @@
 			"valor": 830.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap6_1.jpg",
+				"./pictures/ap6_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 3,
@@ -129,8 +129,8 @@
 			"valor": 212000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap7_1.jpg",
+				"./pictures/ap7_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 4,
@@ -148,8 +148,8 @@
 			"valor": 1000.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap8_1.jpg",
+				"./pictures/ap8_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,
@@ -168,8 +168,8 @@
 			"valor": 1100.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap9_1.jpg",
+				"./pictures/ap9_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 1 ,
@@ -188,8 +188,8 @@
 			"valor": 1180.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap10_1.jpg",
+				"./pictures/ap10_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 2 ,
@@ -208,8 +208,8 @@
 			"valor": 1200.00,
 			"status":"Aluguel",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap11_1.jpg",
+				"./pictures/ap11_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 4 ,
@@ -228,8 +228,8 @@
 			"valor": 450 ,
 			"status":"Aluguel",
 			"fotos":[
-				 "./pictures/ap11_1.jpg",
-				 "./pictures/ap11_2.jpg"
+				 "./pictures/ap12_1.jpg",
+				 "./pictures/ap12_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 5,
@@ -248,7 +248,7 @@
 			"valor": 120.000 ,
 			"status":"Venda",
 			"fotos":[
-				 "./pictures/ap12_1.jpg",
+				 "./pictures/ap13_1.jpg",
 				 "./pictures/ap12_2.jpg"
 			],
 			"avaliacoes": {
@@ -268,8 +268,8 @@
 			"valor":550000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap14_1.jpg",
+				"./pictures/ap14_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 1 ,
@@ -288,8 +288,8 @@
 			"valor": 600000.00,
 			"status":"Venda",
 			"fotos":[
-				 "",
-				 ""
+				"./pictures/ap15_1.jpg",
+				"./pictures/ap15_2.jpg"
 			],
 			"avaliacoes": {
 				"arredores": 3 ,
