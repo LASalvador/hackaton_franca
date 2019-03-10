@@ -72,6 +72,7 @@
           :top="top"
           :left="left"
           :right="right"
+          color="#16AC70"
           v-model="snackbar"
         >
           <div>Obrigado por mandar seus dados do seu imovel. Em breve entaremos em contato!</div>

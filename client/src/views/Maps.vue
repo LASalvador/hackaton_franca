@@ -15,7 +15,7 @@
                 color="#0087a5"
               ></v-select>
             </div>
-            <v-textarea v-model="teste" label="Descreva com detalhes sua reclamação" xs12></v-textarea>
+            <v-textarea v-model="teste" color="#0087a5" label="Descreva com detalhes sua reclamação" xs12></v-textarea>
           </v-flex>
         </v-layout>
         <div>
@@ -26,6 +26,7 @@
           :top="top"
           :left="left"
           :right="right"
+          color="#16AC70"
           v-model="snackbar">
           <div>Obrigado pelas informações. Em breve entaremos em contato!</div>
           <v-icon
