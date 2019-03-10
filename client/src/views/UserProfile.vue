@@ -4,7 +4,7 @@
       <v-flex xs12 md8>
         <material-card class="v-card-profile" style="width: 100%">
           <v-avatar slot="offset" class="mx-auto d-block" size="70">
-            <img src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg">
+            <img :src="avatar" color="white">
           </v-avatar>
 
           <v-card-text xs12 class="text-xs-center">

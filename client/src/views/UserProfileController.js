@@ -7,14 +7,16 @@ export default {
   components: {
     'reports': reports,
     'avaliar': avaliar,
-    'anunciar': anunciar
+    'anunciar': anunciar,
   },
   created() {
     this.arrayImoveis = imoveis.houses
     this.avancarConversa()
+    this.avatar = './img/francis.png'
   },
   data() {
     return {
+      avatar: '',
       arrayHistoricoConversa: [],
       arrayScriptPrincipal: [
         {
