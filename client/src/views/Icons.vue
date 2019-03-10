@@ -1,25 +1,24 @@
 <template>
   <v-container fill-height fluid grid-list-xl>
-    <v-layout justify-center wrap>
+    <v-layout  wrap>
       <v-flex xs12 md8>
         <material-card>
-          <v-card-text class="text-right">
+          <v-card-text >
             <v-container py-0>
-              <v-layout wrap align-content-center>
+              <v-layout wrap >
                 <v-flex align-selfstart>
                   <div>
-                    <v-chip xs12 color="red" text-color="white">
-                      <v-avatar color="red darken-4">F</v-avatar>
-                        Agora, preencha este formulário!
-                    </v-chip >
-                    <v-chip xs12 color="red" text-color="white">
-                      <v-avatar color="red darken-4">F</v-avatar>
+                    <spam >
+                        Preencha este formulário!
+                    </spam >
+                     
+                    <spam xs12 color="red" text-color="white">
                       Para te ajudarmos!
-                    </v-chip >
+                    </spam >
                   </div>
                         
                   <div>
-                    <v-text-field   label="Nome completo"></v-text-field>
+                    <v-text-field  id="nome" label="Nome completo"></v-text-field>
                   </div>
                   <div>
                     <v-text-field   label="E-mail"></v-text-field>
@@ -28,10 +27,12 @@
                     <v-text-field   label="Contato"></v-text-field>
                   </div>
                   <div>
-                    <v-chip xs12 color="red" text-color="white">
-                      <v-avatar color="red darken-4">F</v-avatar>
-                        Insira os dados do seu imóvel !
-                    </v-chip>
+                    <spam> 
+                        Agora, insira os dados do seu imóvel!
+                    </spam>
+                  </div>
+                  <div>
+                    <v-text-field   label="Título"></v-text-field>
                   </div>
                    
                   <div>
@@ -41,43 +42,27 @@
                   <div>
                     <v-text-field   label="Complemento"></v-text-field>
                   </div>
-                    
-                  <v-menu
-                  offset-y
-                  content-class="dropdown-menu"
-                  transition="slide-y-transition">
-                  <v-btn
-                  slot="activator"
-                    color="red"
-                    class="redondo"
-                  >
-                    Categoria
-                  </v-btn>
-                  <v-card>
-                    <v-list dense>
-                      <v-list-tile
-                        v-for="notification in notifications"
-                        :key="notification"
-                      >
-                        <v-list-tile-title
-                          v-text="notification"
-                          class="Cor"
-                        />
-                      </v-list-tile>
-                    </v-list>
-                  </v-card>
-                </v-menu>
-                                
                   <div>
-                    <v-text-field   label="Endereço"></v-text-field>
+                    <v-textarea   label="Descrição"></v-textarea>
                   </div>
                  
-                  <div>
-                    <v-text-field   label="Endereço"></v-text-field>
-                  </div>
-                 
-                  
-                        
+                  <v-select
+                      :items="tipo_imovel"
+                      label="Tipo de Imóvel"
+                    ></v-select>
+                  <v-select
+                      :items="tipo_negocio"
+                      label="Tipo de Negócio"
+                    ></v-select>
+                      <h4 class="card-title font-weight-light">O que pretende fazer?</h4>
+                     <v-radio-group v-model="radios" :mandatory="false">
+                        <v-radio label="Alugar" value="Alugar"></v-radio>
+                        <v-radio label="Vender" value="Vender"></v-radio>
+                        <v-radio label="Comprar" value="Comprar"></v-radio>
+                      </v-radio-group>
+                      <v-btn class="enviar" color="red" >
+                       Enviar
+                      </v-btn>
                 </v-flex>
                 <br>
               </v-layout>
@@ -88,46 +73,15 @@
     </v-layout>
   </v-container>
 </template>
-
+                
 <script>
 export default {
   data () {
     return {
-      arrayConversaChat: [
-        {
-          id: 0,
-          tipo: 'texto',
-          remetente: 'francis',
-          texto: 'Você gostaria um imóvel para que?'
-        },
-        {
-          id: 0,
-          tipo: 'botao',
-          remetente: 'francis',
-          texto: 'Morar'
-        },
-        {
-          id: 0,
-          tipo: 'botao',
-          remetente: 'francis',
-          texto: 'Meu negócio'
-        },
-        {
-          id: 1,
-          tipo: 'texto',
-          remetente: 'francis',
-          texto: 'Vou te auxiliar hoje!'
-        },
-        {
-          id: 2,
-          tipo: 'texto',
-          remetente: 'francis',
-          texto: 'O que você precisa fazer hoje?'
-        },
-      ],
+     
       respostasConversa: [],
       resposta: null, 
-         notifications: [
+         tipo_imovel: [
         'Apartamento',
         'Casa',
         'Casa em Condomínio',
@@ -136,8 +90,13 @@ export default {
         'Terreno',
         'Terreno em Condomínio',
         'Área',
-      ]
-    }
+      ],
+       tipo_negocio: [
+        'Residencial',
+        'Comercial',
+        'Empreendimento',
+        ],
+       }
   },
   methods: {
     teste () {
@@ -148,12 +107,18 @@ export default {
 }
 </script>
 <style scoped>
-.redondo{
-    background-color:#666;
-    border-radius: 20px;
-    }
-.cor{
-  background-color: red !important;
-}
-</style>
+  .enviar {
+   border-radius: 20px;
+ }
+    
+
+
+
+
+                  
+                 
+                 
+                                
+                  
+                        
 
