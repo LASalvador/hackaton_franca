@@ -1,27 +1,27 @@
 <template>
   <v-container fill-height fluid grid-list-xl xs12>
-    <v-layout justify-center wrap xs12>
+    <v-layout wrap xs12>
       <v-flex xs12 md8>
         <material-card xs12>
           <v-card-text class="text-right" xs12>
             <v-container py-0 xs12>
+              <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
               <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
                 <v-flex>
                   <div>
-                    <v-chip color="red" text-color="white" xs12>
-                      <v-avatar color="red darken-4">F</v-avatar>
+                   <span>
                         {{mensagem.texto}}
-                    </v-chip>
+                   </span>
                   </div>
-                  <div>
-
+                  <div  v-if="mensagem.tipo == 'pergunta'">
+                   <v-rating></v-rating>
                   </div>
                 </v-flex>
                 <br>
               </v-layout>
               <div>
                 <v-btn @click="teste" small color="red">
-                  P
+                  Enviar Avaliacao
                 </v-btn>
               </div>
             </v-container>
@@ -38,84 +38,44 @@ export default {
     return {
       arrayConversaChat: [
         {
-          id: 0,
-          tipo: 'mensagem',
-          remetente: 'Francis',
-          texto: 'Olá! Agora vamos realizar uma avaliação do imovel.'
-        },
-        {
           id: 1,
           tipo: 'mensagem',
           remetente: 'Francis',
-          identificador: 3,
-          texto: 'Antes precisamos de informações sobre você'
+          identificador: "0",
+          texto: ''
         },
         {
           id: 2,
           tipo: 'pergunta',
           remetente: 'Francis',
-          identificador: 1,
-          texto: 'Quantos anos você tem?'
+          identificador: "1",
+          texto: 'O quanto os locais proximos são uteis para você?'
         },
         {
           id: 3,
           tipo: 'pergunta',
           remetente: 'Francis',
-          identificador: 2,
-          texto: 'Qual sua estado civil?'
+          identificador: "2",
+          texto: 'O quanto você considera o imovel acessivel?'
         },
         {
           id: 4,
           tipo: 'pergunta',
           remetente: 'Francis',
-          identificador: 2,
-          texto: 'Você tem filhos?'
+          identificador: "2",
+          texto: 'O quanto você acha o tamanho dos comodos apropriados?'
         },
         {
           id: 5,
-          tipo: 'mensagem',
-          remetente: 'Francis',
-          identificador: 1,
-          texto: 'Agora vamos as perguntas'
-        },
-        {
-          id: 6,
-          tipo: 'mensagem',
-          remetente: 'Francis',
-          texto: 'Responda nossas perguntas com qualificacoes de 0 a 5.'
-        },
-        {
-          id: 7,
           tipo: 'pergunta',
           remetente: 'Francis',
-          identificador: 2,
-          texto: 'O quanto os locais proximos são uteis para você?'
-        },
-        {
-          id: 8,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: 1,
-          texto: 'O quanto você considera o imovel acessivel?'
-        },
-        {
-          id: 9,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: 1,
-          texto: 'O quanto voce achar o tamanho dos comodos apropriados?0,'
-        },
-        {
-          id: 10,
-          tipo: 'pergunta',
-          remetente: 'Francis',
-          identificador: 1,
+          identificador: "1",
           texto: 'O que nota voce dá a pintura do imovel?'
         }
-
       ],
       respostasConversa: [],
-      resposta: null
+      resposta: null,
+      slider: 0
     }
   },
   methods: {

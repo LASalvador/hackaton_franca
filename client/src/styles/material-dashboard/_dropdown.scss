@@ -20,7 +20,7 @@
     &:hover,
     &:focus,
     &:active {
-      @include dropdown-menu-color($brand-primary);
+      @include dropdown-menu-color(rgba(233, 241, 241, 0.726));
 
       &,
       .v-list__tile__title {
