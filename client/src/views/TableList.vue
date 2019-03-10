@@ -1,32 +1,30 @@
 <template>
-  <v-container fill-height fluid grid-list-xl>
-    <v-layout justify-center wrap>
+  <v-container fill-height fluid grid-list-xl xs12>
+    <v-layout justify-center wrap xs12>
       <v-flex xs12 md8>
-        <material-card class="v-card-profile">
-          <v-card-text class="text-right">
-            <v-form>
-            <v-container py-0>
-              <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id">
+        <material-card xs12>
+          <v-card-text class="text-right" xs12>
+            <v-container py-0 xs12>
+              <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
                 <v-flex>
                   <div>
-                    <v-chip color="red" text-color="white">
+                    <v-chip color="red" text-color="white" xs12>
                       <v-avatar color="red darken-4">F</v-avatar>
                         {{mensagem.texto}}
                     </v-chip>
                   </div>
                   <div>
-                    <v-text-field @click="teste" v-model="resposta" label="Digite uma resposta"></v-text-field>
+
                   </div>
                 </v-flex>
                 <br>
               </v-layout>
               <div>
                 <v-btn @click="teste" small color="red">
-                  Prosseguir
+                  P
                 </v-btn>
               </div>
             </v-container>
-          </v-form>
           </v-card-text>
         </material-card>
       </v-flex>
@@ -49,22 +47,72 @@ export default {
           id: 1,
           tipo: 'mensagem',
           remetente: 'Francis',
-          texto: 'Responda nossas perguntas com qualificacoes de 0 a 5.'
+          identificador: 3,
+          texto: 'Antes precisamos de informações sobre você'
         },
         {
           id: 2,
           tipo: 'pergunta',
           remetente: 'Francis',
           identificador: 1,
-          texto: 'O que você precisa fazer hoje?'
+          texto: 'Quantos anos você tem?'
         },
         {
           id: 3,
           tipo: 'pergunta',
           remetente: 'Francis',
-          identificador: 1,
-          texto: 'O que você precisa fazer hoje?'
+          identificador: 2,
+          texto: 'Qual sua estado civil?'
         },
+        {
+          id: 4,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: 2,
+          texto: 'Você tem filhos?'
+        },
+        {
+          id: 5,
+          tipo: 'mensagem',
+          remetente: 'Francis',
+          identificador: 1,
+          texto: 'Agora vamos as perguntas'
+        },
+        {
+          id: 6,
+          tipo: 'mensagem',
+          remetente: 'Francis',
+          texto: 'Responda nossas perguntas com qualificacoes de 0 a 5.'
+        },
+        {
+          id: 7,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: 2,
+          texto: 'O quanto os locais proximos são uteis para você?'
+        },
+        {
+          id: 8,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: 1,
+          texto: 'O quanto você considera o imovel acessivel?'
+        },
+        {
+          id: 9,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: 1,
+          texto: 'O quanto voce achar o tamanho dos comodos apropriados?0,'
+        },
+        {
+          id: 10,
+          tipo: 'pergunta',
+          remetente: 'Francis',
+          identificador: 1,
+          texto: 'O que nota voce dá a pintura do imovel?'
+        }
+
       ],
       respostasConversa: [],
       resposta: null
