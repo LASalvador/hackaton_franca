@@ -1,48 +1,26 @@
 <template>
-  <v-container fill-height fluid grid-list-xl xs12>
-    <v-layout wrap xs12>
-      <v-flex xs12 md8>
-        <v-container py-0 xs12>
-          <span xs12>Responda nossas perguntas com nivel de estrelas.</span>
-          <v-select 
-          :items="arrayNomes"
-          label="Selecione um imovel"></v-select>
-          <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
-            <v-flex>
-              <div>
-                <span>
-                    {{mensagem.texto}}
-                </span>
-              </div>
-              <div  v-if="mensagem.tipo == 'pergunta'">
-                <v-rating></v-rating>
-              </div>
-            </v-flex>
-            <br>
-          </v-layout>
-          <div>
-            <v-btn @click="snack('bottom')" class="enviar" small color="#0087a5">
-              Enviar Avaliacao
-            </v-btn>
-          </div>
-        </v-container>
-         <v-snackbar
-          :bottom="bottom"
-          :top="top"
-          :left="left"
-          :right="right"
-          color="#16AC70"
-          v-model="snackbar"
-        >
-          <div>Obrigado por completar a avaliação. Sua opinião é muito válida</div>
-          <v-icon
-            size="16"
-            @click="snackbar = false"
-          > </v-icon>
-        </v-snackbar>
-      </v-flex>
-    </v-layout>
-  </v-container>
+<div>
+  <span xs12>Temos algumas perguntas...</span>
+  <v-select :items="arrayNomes" label="Selecione um imovel" color="#3D7ED7"></v-select>
+  <v-layout wrap v-for="mensagem in arrayConversaChat" :key="mensagem.id" xs12>
+    <v-flex>
+      <div>
+        <span>{{mensagem.texto}}</span>
+      </div>
+      <div v-if="mensagem.tipo == 'pergunta'" class="text-xs-center">
+        <v-rating color="#3D7ED7"></v-rating>
+      </div>
+    </v-flex>
+    <br>
+  </v-layout>
+  <div class="text-xs-center">
+    <v-btn block @click="snack('bottom')" class="enviar" small color="#3D7ED7">Enviar Avaliacao</v-btn>
+  </div>
+  <v-snackbar :bottom="bottom" :top="top" :left="left" :right="right" color="#16AC70" v-model="snackbar">
+    <div>Obrigado por completar a avaliação. Sua opinião é muito válida</div>
+    <v-icon size="16" @click="snackbar = false"></v-icon>
+  </v-snackbar>
+</div>
 </template>
 
 <script>
@@ -57,13 +35,13 @@ export default {
       arrayImoveis: [] ,
       arrayNomes: [],
       arrayConversaChat: [
-        {
-          id: 1,
-          tipo: 'mensagem',
-          remetente: 'Francis',
-          identificador: "0",
-          texto: ''
-        },
+        // {
+        //   id: 1,
+        //   tipo: 'mensagem',
+        //   remetente: 'Francis',
+        //   identificador: "0",
+        //   texto: ''
+        // },
         {
           id: 2,
           tipo: 'pergunta',
@@ -130,8 +108,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-  .enviar {
-   border-radius: 20px;
- }
-</style>
