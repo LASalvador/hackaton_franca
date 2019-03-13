@@ -13,7 +13,7 @@
 export default {
   metaInfo () {
     return {
-      title: 'França Imobiliaria'
+      title: 'Francis Chatbot'
     }
   }
 }

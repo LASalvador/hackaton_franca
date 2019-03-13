@@ -29,7 +29,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            França Imobiliaria
+            Francis Chatbot
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
@@ -71,7 +71,7 @@ import {
 
 export default {
   data: () => ({
-    logo: 'https://francaimobiliaria.com.br/media/francaimobiliaria/2018/08/imobiliaria-em-jacarei-sjc-franca-imobiliaria-icon.png',
+    logo: './img/francis.png',
     links: [
       {
         to: '/dashboard',
