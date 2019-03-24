@@ -1,19 +1,24 @@
-# Fracis
-O Fracis é um chat onde o usuário poderá ter a experiência de procurar imoveis, relatar problemas no imovel, avaliar um imovel etc.
+# Francis Bot
+O Francis Bot é um chatbot imobiliário que tem como objetivo auxiliar pessoas na procura de imoveis para alugá-los e/ou comprá-los. Além dessas funções, também é possível realizar avaliações dos imóveis e relatar problemas nos mesmos através do sistema.
 
-Desenvolvido pelo Time Super Devs: (melhor Time)
+O Bot é um Progressive Web App (PWA), site que possui comportamento semelhante ao de apps nativos, desenvolvido com Vue.js e o Vuetify. 
 
-1.David Gabriel
-2.Fabio Rodrigues
-3.Luana Andare
-4.Lucas Salvador
+Esse projeto é um MVP desenvolvido no hackathon da França imobiliária em Março de 2019. Esse MVP garantiu-nos o prêmio de primeiro lugar no hackathon. 
 
-# Para utilizar o PWA no chrome não esqueça de habilitar o modo Mobile no navegador através do modo ferramenta de desenvolver  
+Desenvolvido pelo Time Super Devs: 
 
-> O projeto utiliza framework JS VUe logo para utilizá-lo é necessário ter instalado:
->  nodejs e yarn
+1. David Gabriel
+2. Fabio Rodrigues
+3. Lucas Salvador
+4. Luana Andare
 
-## Project setup
+
+> O projeto utiliza framework Vue.js logo para utilizá-lo é necessário ter instalado:
+> Node.js e o gerenciador npm ou yarn.
+
+## Informações Uteis para utilização do app
+
+### Project setup
 ```
 yarn install
 ```
